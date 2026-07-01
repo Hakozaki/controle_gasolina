@@ -153,8 +153,8 @@ public class MainActivity extends Activity {
 
         litersSummaryText = new TextView(this);
         totalSummaryText = new TextView(this);
-        summaryRow.addView(summaryCard(R.drawable.ic_liters, "Litros", "34,2 L", litersSummaryText), weightedCardParams(0));
-        summaryRow.addView(summaryCard(R.drawable.ic_money, "Total", "R$ 205,00", totalSummaryText), weightedCardParams(dp(10)));
+        summaryRow.addView(summaryCard(R.drawable.ic_liters, "Litros", "0,0 L", litersSummaryText), weightedCardParams(0));
+        summaryRow.addView(summaryCard(R.drawable.ic_money, "Total", "R$ 0,00", totalSummaryText), weightedCardParams(dp(10)));
 
         LinearLayout form = section();
         root.addView(form);
@@ -187,10 +187,10 @@ public class MainActivity extends Activity {
         valueRow.setPadding(0, dp(12), 0, 0);
         form.addView(valueRow);
 
-        litersInput = input("34,2", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        litersInput = input("Litros abastecidos", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
         valueRow.addView(inputBlock(R.drawable.ic_liters, "Litros", litersInput), weightedCardParams(0));
 
-        totalValueInput = input("R$ 205,00", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        totalValueInput = input("Valor pago", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
         valueRow.addView(inputBlock(R.drawable.ic_money, "Valor total", totalValueInput), weightedCardParams(dp(8)));
 
         kmInput = input("Quilometragem atual (opcional)", InputType.TYPE_CLASS_NUMBER);
@@ -891,16 +891,17 @@ public class MainActivity extends Activity {
         title.setTextSize(13);
         content.addView(title);
 
-        double liters = item.getDouble("liters");
-        double total = item.getDouble("totalValue");
+        double liters = item.optDouble("liters", 0);
+        double total = item.optDouble("totalValue", 0);
         String odometer = item.optString("odometer", "");
         String km = odometer.isEmpty() ? "" : " | Km " + odometer;
+        String unitPrice = liters > 0 ? moneyFormat.format(total / liters) + "/L" : "-";
         String details = dateFormat.format(new Date(item.getLong("timestamp")))
                 + km
                 + "\n" + item.getString("station")
                 + "\n" + String.format(Locale.getDefault(), "%.2f L", liters)
                 + " | " + moneyFormat.format(total)
-                + " | " + moneyFormat.format(total / liters) + "/L";
+                + " | " + unitPrice;
 
         if (!item.isNull("latitude") && !item.isNull("longitude")) {
             details += String.format(Locale.getDefault(), "\nGPS: %.5f, %.5f", item.getDouble("latitude"), item.getDouble("longitude"));
@@ -1443,7 +1444,11 @@ public class MainActivity extends Activity {
             return 0;
         }
         try {
-            return Double.parseDouble(text.replace(",", "."));
+            String normalized = text.replace("R$", "").replace(" ", "");
+            if (normalized.contains(",")) {
+                normalized = normalized.replace(".", "").replace(",", ".");
+            }
+            return Double.parseDouble(normalized);
         } catch (NumberFormatException e) {
             return 0;
         }
