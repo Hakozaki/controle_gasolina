@@ -2302,6 +2302,31 @@
                           "fill": "$text-secondary"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TJtuC",
+                      "name": "Meu veículo Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#FFF4F2",
+                      "cornerRadius": 8,
+                      "stroke": "#F1C8C1",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "k2lcnG",
+                          "name": "Meu veículo Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#C24132"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -2405,6 +2430,31 @@
                           "fill": "$text-secondary"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pVE6G",
+                      "name": "Moto CG Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#FFF4F2",
+                      "cornerRadius": 8,
+                      "stroke": "#F1C8C1",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "DgSoj",
+                          "name": "Moto CG Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#C24132"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -2506,6 +2556,31 @@
                           "icon": "pencil",
                           "library": "lucide",
                           "fill": "$text-secondary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "El303",
+                      "name": "Caminhonete Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#FFF4F2",
+                      "cornerRadius": 8,
+                      "stroke": "#F1C8C1",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ueCj2",
+                          "name": "Caminhonete Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#C24132"
                         }
                       ]
                     }
@@ -3150,6 +3225,31 @@
                           "fill": "$text-secondary"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MYJAR",
+                      "name": "Posto Central Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#FFF4F2",
+                      "cornerRadius": 8,
+                      "stroke": "#F1C8C1",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ossX8",
+                          "name": "Posto Central Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#C24132"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -3253,6 +3353,31 @@
                           "fill": "$text-secondary"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ieGsj",
+                      "name": "Posto Avenida Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#FFF4F2",
+                      "cornerRadius": 8,
+                      "stroke": "#F1C8C1",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Gk45H",
+                          "name": "Posto Avenida Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#C24132"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -3354,6 +3479,31 @@
                           "icon": "pencil",
                           "library": "lucide",
                           "fill": "$text-secondary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "r5Pre",
+                      "name": "Auto Posto BR Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#FFF4F2",
+                      "cornerRadius": 8,
+                      "stroke": "#F1C8C1",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "a6P2uv",
+                          "name": "Auto Posto BR Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#C24132"
                         }
                       ]
                     }
@@ -5867,6 +6017,31 @@
                           "fill": "#7E9086"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "korxC",
+                      "name": "Meu veículo Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#241A1A",
+                      "cornerRadius": 8,
+                      "stroke": "#5A2A2A",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "UnbXr",
+                          "name": "Meu veículo Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#FF8A7A"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -5970,6 +6145,31 @@
                           "fill": "#7E9086"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Gi0JS",
+                      "name": "Moto CG Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#241A1A",
+                      "cornerRadius": 8,
+                      "stroke": "#5A2A2A",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "N8fgx",
+                          "name": "Moto CG Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#FF8A7A"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -6071,6 +6271,31 @@
                           "icon": "pencil",
                           "library": "lucide",
                           "fill": "#7E9086"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RVmmy",
+                      "name": "Caminhonete Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#241A1A",
+                      "cornerRadius": 8,
+                      "stroke": "#5A2A2A",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "y3K1f",
+                          "name": "Caminhonete Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#FF8A7A"
                         }
                       ]
                     }
@@ -6718,6 +6943,31 @@
                           "fill": "#7E9086"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fEXxu",
+                      "name": "Posto Central Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#241A1A",
+                      "cornerRadius": 8,
+                      "stroke": "#5A2A2A",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "E9NWZ",
+                          "name": "Posto Central Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#FF8A7A"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -6821,6 +7071,31 @@
                           "fill": "#7E9086"
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YUxpn",
+                      "name": "Posto Avenida Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#241A1A",
+                      "cornerRadius": 8,
+                      "stroke": "#5A2A2A",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "xdxLZ",
+                          "name": "Posto Avenida Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#FF8A7A"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -6922,6 +7197,31 @@
                           "icon": "pencil",
                           "library": "lucide",
                           "fill": "#7E9086"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KQFhr",
+                      "name": "Auto Posto BR Remove Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#241A1A",
+                      "cornerRadius": 8,
+                      "stroke": "#5A2A2A",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "aqT8a",
+                          "name": "Auto Posto BR Remove Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trash-2",
+                          "library": "lucide",
+                          "fill": "#FF8A7A"
                         }
                       ]
                     }
