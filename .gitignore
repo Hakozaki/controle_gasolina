@@ -1,0 +1,36 @@
+# Gradle / Android build outputs
+.gradle/
+build/
+**/build/
+
+# Local SDK and machine-specific files
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Generated packages and compiled artifacts
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Java / Kotlin tooling
+hs_err_pid*
+*.hprof
+.kotlin/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
