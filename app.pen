@@ -1414,31 +1414,6 @@
                           "fontWeight": "normal"
                         }
                       ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "NEKGU",
-                      "name": "Meu veículo - Gasolina Edit Button",
-                      "width": 36,
-                      "height": 36,
-                      "fill": "$field-bg",
-                      "cornerRadius": 8,
-                      "stroke": "$line-soft",
-                      "strokeWidth": 1,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "gsiOq",
-                          "name": "Meu veículo - Gasolina Edit Icon",
-                          "width": 17,
-                          "height": 17,
-                          "icon": "pencil",
-                          "library": "lucide",
-                          "fill": "$text-secondary"
-                        }
-                      ]
                     }
                   ]
                 },
@@ -1515,31 +1490,6 @@
                           "fontFamily": "$font-body",
                           "fontSize": 12,
                           "fontWeight": "normal"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "oJr5q",
-                      "name": "Meu veículo - Etanol Edit Button",
-                      "width": 36,
-                      "height": 36,
-                      "fill": "$field-bg",
-                      "cornerRadius": 8,
-                      "stroke": "$line-soft",
-                      "strokeWidth": 1,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "fvxKS",
-                          "name": "Meu veículo - Etanol Edit Icon",
-                          "width": 17,
-                          "height": 17,
-                          "icon": "pencil",
-                          "library": "lucide",
-                          "fill": "$text-secondary"
                         }
                       ]
                     }
@@ -1620,31 +1570,6 @@
                           "fontWeight": "normal"
                         }
                       ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "DKyDa",
-                      "name": "Moto CG - Gasolina Edit Button",
-                      "width": 36,
-                      "height": 36,
-                      "fill": "$field-bg",
-                      "cornerRadius": 8,
-                      "stroke": "$line-soft",
-                      "strokeWidth": 1,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "h15XNT",
-                          "name": "Moto CG - Gasolina Edit Icon",
-                          "width": 17,
-                          "height": 17,
-                          "icon": "pencil",
-                          "library": "lucide",
-                          "fill": "$text-secondary"
-                        }
-                      ]
                     }
                   ]
                 },
@@ -1721,31 +1646,6 @@
                           "fontFamily": "$font-body",
                           "fontSize": 12,
                           "fontWeight": "normal"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "EDgwT",
-                      "name": "Meu veículo - Diesel Edit Button",
-                      "width": 36,
-                      "height": 36,
-                      "fill": "$field-bg",
-                      "cornerRadius": 8,
-                      "stroke": "$line-soft",
-                      "strokeWidth": 1,
-                      "justifyContent": "center",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "M2HW2",
-                          "name": "Meu veículo - Diesel Edit Icon",
-                          "width": 17,
-                          "height": 17,
-                          "icon": "pencil",
-                          "library": "lucide",
-                          "fill": "$text-secondary"
                         }
                       ]
                     }
