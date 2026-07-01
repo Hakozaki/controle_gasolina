@@ -29,7 +29,7 @@ app/build/outputs/apk/debug/app-debug.apk
 ## Como instalar em um celular conectado
 
 ```bash
-adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb install -r app/build/outputs/apk/debug/controle-gasolina-debug.apk
 ```
 
 Os dados ficam salvos localmente no aparelho usando `SharedPreferences`.

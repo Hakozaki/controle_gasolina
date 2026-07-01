@@ -1083,6 +1083,41 @@
                   "fontWeight": "600"
                 }
               ]
+            },
+            {
+              "type": "frame",
+              "id": "IQhiA",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "FDWRK",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "dQpd5",
+                  "name": "Config Tab Label",
+                  "fill": "#60685F",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
             }
           ]
         }
@@ -1805,6 +1840,41 @@
                   "fill": "$text-secondary",
                   "content": "Postos",
                   "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hNajf",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "q4UjV",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "FjjZq",
+                  "name": "Config Tab Label",
+                  "fill": "#60685F",
+                  "content": "Config",
+                  "fontFamily": "Inter",
                   "fontSize": 10,
                   "fontWeight": "600"
                 }
@@ -2622,6 +2692,41 @@
                   "fontWeight": "600"
                 }
               ]
+            },
+            {
+              "type": "frame",
+              "id": "UBlMI",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "S68AgE",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "vTsOo",
+                  "name": "Config Tab Label",
+                  "fill": "#60685F",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
             }
           ]
         }
@@ -3435,52 +3540,5125 @@
                   "fontWeight": "800"
                 }
               ]
+            },
+            {
+              "type": "frame",
+              "id": "Z8bR9",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "DsXeo",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "yh0aY",
+                  "name": "Config Tab Label",
+                  "fill": "#60685F",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pmwY6",
+      "x": 1760,
+      "y": 0,
+      "name": "Controle Gasolina - Registro Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 390,
+      "fill": "#0B1110",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Kg5pe",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "#0B1110",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "R2NEh",
+              "name": "Status Time",
+              "fill": "#F4FBF6",
+              "content": "09:41",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "RsLFo",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "q2cRW1",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "icon",
+                  "id": "lN7Pf",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "icon",
+                  "id": "KiG0Z",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "f1s6B",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "#0B1110",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "LNxCM",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ts2fR",
+                  "name": "Screen Title",
+                  "fill": "#F4FBF6",
+                  "content": "Controle Gasolina",
+                  "fontFamily": "$font-body",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "tcey9",
+                  "name": "Screen Subtitle",
+                  "fill": "#A8B6AD",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Registre o abastecimento e acompanhe o custo por litro.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aID4t",
+              "name": "Vehicle Picker",
+              "width": "fill_container",
+              "height": 54,
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "luPsE",
+                  "name": "Selected Vehicle",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "tBpC7",
+                      "name": "Vehicle Icon",
+                      "width": 21,
+                      "height": 21,
+                      "icon": "car",
+                      "library": "lucide",
+                      "fill": "#29A66A"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ePHfc",
+                      "name": "Vehicle Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b5H1M",
+                          "name": "Vehicle Label",
+                          "fill": "#A8B6AD",
+                          "content": "Veículo",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Spw5x",
+                          "name": "Vehicle Value",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "w58bi",
+                      "name": "Vehicle Dropdown",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "#7E9086"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a1dTu",
+                  "name": "Add Vehicle Button",
+                  "width": 54,
+                  "height": 54,
+                  "fill": "#29A66A",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "SWvft",
+                      "name": "Add Vehicle Icon",
+                      "width": 24,
+                      "height": 24,
+                      "icon": "plus",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "P9wT4i",
+              "name": "Fuel Summary",
+              "width": "fill_container",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "chobc",
+                  "name": "Litros Summary",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "tlXzA",
+                      "name": "Litros Summary Top",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ITOQ7",
+                          "name": "Litros Summary Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "P2Vtk",
+                          "name": "Litros Summary Label",
+                          "fill": "#A8B6AD",
+                          "content": "Litros",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "tsYSy",
+                      "name": "Litros Summary Value",
+                      "fill": "#F4FBF6",
+                      "content": "34,2 L",
+                      "fontFamily": "$font-body",
+                      "fontSize": 20,
+                      "fontWeight": "800"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jX7wd",
+                  "name": "Total Summary",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "y15roB",
+                      "name": "Total Summary Top",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Scixe",
+                          "name": "Total Summary Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "wallet",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "b9uxnA",
+                          "name": "Total Summary Label",
+                          "fill": "#A8B6AD",
+                          "content": "Total",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "a06bxh",
+                      "name": "Total Summary Value",
+                      "fill": "#F4FBF6",
+                      "content": "R$ 205,00",
+                      "fontFamily": "$font-body",
+                      "fontSize": 20,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "N5UUt",
+              "name": "Refuel Form",
+              "width": "fill_container",
+              "fill": "#141D1A",
+              "cornerRadius": 8,
+              "stroke": "#294139",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xsxOc",
+                  "name": "Form Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vzGgg",
+                      "name": "Form Title",
+                      "fill": "#F4FBF6",
+                      "content": "Novo abastecimento",
+                      "fontFamily": "$font-body",
+                      "fontSize": 18,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "l84mFi",
+                      "name": "Fuel Type Badge",
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "gap": 6,
+                      "padding": [
+                        7,
+                        10
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ylWbm",
+                          "name": "Fuel Type Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "droplet",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "DPdrJ",
+                          "name": "Fuel Type Text",
+                          "fill": "#4AE08F",
+                          "content": "Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CcqFd",
+                  "name": "Form Row Liters Value",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bLJxV",
+                      "name": "Litros Field",
+                      "width": "fill_container",
+                      "height": 50,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "gap": 10,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "dAMhM",
+                          "name": "Litros Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "gauge",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sbs0X",
+                          "name": "Litros Field Text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rxyzW",
+                              "name": "Litros Label",
+                              "fill": "#A8B6AD",
+                              "content": "Litros",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "FM60U",
+                              "name": "Litros Value",
+                              "fill": "#F4FBF6",
+                              "content": "34,2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n0nmR0",
+                      "name": "Valor Field",
+                      "width": "fill_container",
+                      "height": 50,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "gap": 10,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "pZoZD",
+                          "name": "Valor Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "circle-dollar-sign",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "c6tcwQ",
+                          "name": "Valor Field Text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "CFQbV",
+                              "name": "Valor Label",
+                              "fill": "#A8B6AD",
+                              "content": "Valor",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "bkctz",
+                              "name": "Valor Value",
+                              "fill": "#F4FBF6",
+                              "content": "R$ 205,00",
+                              "fontFamily": "$font-body",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NxtPq",
+                  "name": "Quilometragem Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "#0F1715",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "I4Dhmw",
+                      "name": "Quilometragem Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "milestone",
+                      "library": "lucide",
+                      "fill": "#7E9086"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qGej7",
+                      "name": "Quilometragem Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "G9vTbA",
+                          "name": "Quilometragem Label",
+                          "fill": "#A8B6AD",
+                          "content": "Quilometragem",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "y3hHn",
+                          "name": "Quilometragem Value",
+                          "fill": "#F4FBF6",
+                          "content": "12.480 km",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kSzc8",
+                  "name": "Posto Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "#0F1715",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "MoAYO",
+                      "name": "Posto Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "map-pin",
+                      "library": "lucide",
+                      "fill": "#7E9086"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lVFVg",
+                      "name": "Posto Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "EKgj8",
+                          "name": "Posto Label",
+                          "fill": "#A8B6AD",
+                          "content": "Posto",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ikglx",
+                          "name": "Posto Value",
+                          "fill": "#F4FBF6",
+                          "content": "Posto Central",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GWHlT",
+                  "name": "GPS Permission Status",
+                  "width": "fill_container",
+                  "fill": "#33260C",
+                  "cornerRadius": 8,
+                  "gap": 10,
+                  "padding": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "z1l2sC",
+                      "name": "GPS Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "map",
+                      "library": "lucide",
+                      "fill": "#E9C46A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mzlbP",
+                      "name": "GPS Text",
+                      "fill": "#E9C46A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "GPS: aguardando permissão",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iD327",
+                  "name": "Save Refuel Button",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#29A66A",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "LM77T",
+                      "name": "Save Icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "check",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PqR0h",
+                      "name": "Save Label",
+                      "fill": "#FFFFFF",
+                      "content": "Salvar abastecimento",
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "G6EUfh",
+              "name": "History Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HvMCw",
+                  "name": "History Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "o1Q3TU",
+                      "name": "History Title",
+                      "fill": "#F4FBF6",
+                      "content": "Histórico",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RokEj",
+                      "name": "History Count",
+                      "fill": "#4AE08F",
+                      "content": "2 registros",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rs8hq",
+                  "name": "History Card",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "aGF9u",
+                      "name": "History Fuel Dot",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "azcu1",
+                          "name": "History Fuel Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jxADu",
+                      "name": "History Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "nT5KW",
+                          "name": "History Vehicle",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo - Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "yfuk1",
+                          "name": "History Meta",
+                          "fill": "#A8B6AD",
+                          "content": "Hoje, 09:30 · Km 12.480",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "c65bGQ",
+                          "name": "History Price",
+                          "fill": "#A8B6AD",
+                          "content": "34,2 L · R$ 205,00 · R$ 5,99/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NIR7q",
+                  "name": "History Card",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NyTBr",
+                      "name": "History Fuel Dot",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "WoTOv",
+                          "name": "History Fuel Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "I6mKy",
+                      "name": "History Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zFZxQ",
+                          "name": "History Vehicle",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo - Etanol",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GNIAv",
+                          "name": "History Meta",
+                          "fill": "#A8B6AD",
+                          "content": "26 jun · Posto Avenida",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VdJpw",
+                          "name": "History Price",
+                          "fill": "#A8B6AD",
+                          "content": "28,0 L · R$ 122,00 · R$ 4,36/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "riPjD",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "#0B1110",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "P6Ld54",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#143B2B",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "A8vQhF",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "#29A66A"
+                },
+                {
+                  "type": "text",
+                  "id": "Z7AmZ",
+                  "name": "Registro Tab Label",
+                  "fill": "#4AE08F",
+                  "content": "Registro",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nFzUr",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "z1OEn",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "W7Ga5n",
+                  "name": "Histórico Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "quQFL",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "zFYm0",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "THO5r",
+                  "name": "Veículos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qau4c",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "S9HQi",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "TJy8d",
+                  "name": "Postos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hSUuD",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "XszBf",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "bgCP3",
+                  "name": "Config Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "i5VRk",
+      "x": 2230,
+      "y": 0,
+      "name": "Histórico - Registros Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 390,
+      "fill": "#0B1110",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Unln8",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "#0B1110",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "znM3F",
+              "name": "Status Time",
+              "fill": "#F4FBF6",
+              "content": "09:41",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "zhhSE",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "tATUV",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "OpCWH",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "EWATN",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "E8pFlz",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "#0B1110",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "wyrJ4",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Un0pV",
+                  "name": "Screen Title",
+                  "fill": "#F4FBF6",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "WZkou",
+                  "name": "Screen Subtitle",
+                  "fill": "#A8B6AD",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Consulte os abastecimentos salvos e compare valor, litros e custo por litro.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SeKKs",
+              "name": "History Summary",
+              "width": "fill_container",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Y8zCd",
+                  "name": "Total History Metric",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eICpR",
+                      "name": "Total History Metric Top",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "lx33r",
+                          "name": "Total History Metric Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "list-checks",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ZrFsp",
+                          "name": "Total History Metric Label",
+                          "fill": "#A8B6AD",
+                          "content": "Total",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "hdnUB",
+                      "name": "Total History Metric Value",
+                      "fill": "#F4FBF6",
+                      "content": "4 registros",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Gse82",
+                  "name": "Média History Metric",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "teN0t",
+                      "name": "Média History Metric Top",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "bPg2h",
+                          "name": "Média History Metric Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trending-up",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WJC5Y",
+                          "name": "Média History Metric Label",
+                          "fill": "#A8B6AD",
+                          "content": "Média",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "UGTy6",
+                      "name": "Média History Metric Value",
+                      "fill": "#F4FBF6",
+                      "content": "R$ 5,43/L",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sjAqt",
+              "name": "Refuel Records List",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OEuiB",
+                  "name": "Meu veículo - Gasolina Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MIbgs",
+                      "name": "Meu veículo - Gasolina Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "POgyI",
+                          "name": "Meu veículo - Gasolina Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dYP7J",
+                      "name": "Meu veículo - Gasolina Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Z5swHC",
+                          "name": "Meu veículo - Gasolina Title",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo - Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "jTyNw",
+                          "name": "Meu veículo - Gasolina Meta",
+                          "fill": "#A8B6AD",
+                          "content": "Hoje, 09:30 · Km 12.480",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ge9uF",
+                          "name": "Meu veículo - Gasolina Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Posto Central · 34,2 L · R$ 205,00 · R$ 5,99/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "e9wDU",
+                  "name": "Meu veículo - Etanol Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dMC9k",
+                      "name": "Meu veículo - Etanol Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "W9Jsl",
+                          "name": "Meu veículo - Etanol Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "f7bMqR",
+                      "name": "Meu veículo - Etanol Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "h0KQ4",
+                          "name": "Meu veículo - Etanol Title",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo - Etanol",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "b5bzoQ",
+                          "name": "Meu veículo - Etanol Meta",
+                          "fill": "#A8B6AD",
+                          "content": "26 jun, 18:12 · Km 12.120",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "i9F0J8",
+                          "name": "Meu veículo - Etanol Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Posto Avenida · 28,0 L · R$ 122,00 · R$ 4,36/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DUp9b",
+                  "name": "Moto CG - Gasolina Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "JhvSU",
+                      "name": "Moto CG - Gasolina Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "XEXi9",
+                          "name": "Moto CG - Gasolina Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tQ6Du",
+                      "name": "Moto CG - Gasolina Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Xyp5U",
+                          "name": "Moto CG - Gasolina Title",
+                          "fill": "#F4FBF6",
+                          "content": "Moto CG - Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Q8Cw3M",
+                          "name": "Moto CG - Gasolina Meta",
+                          "fill": "#A8B6AD",
+                          "content": "22 jun, 07:45 · Km 31.840",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RPns2",
+                          "name": "Moto CG - Gasolina Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Posto Norte · 12,7 L · R$ 76,00 · R$ 5,98/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "K3353Q",
+                  "name": "Meu veículo - Diesel Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PP2h9",
+                      "name": "Meu veículo - Diesel Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "dYiKK",
+                          "name": "Meu veículo - Diesel Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VpsWz",
+                      "name": "Meu veículo - Diesel Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hZjgN",
+                          "name": "Meu veículo - Diesel Title",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo - Diesel",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rmPHG",
+                          "name": "Meu veículo - Diesel Meta",
+                          "fill": "#A8B6AD",
+                          "content": "18 jun, 17:20 · Km 11.820",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "pVDU9",
+                          "name": "Meu veículo - Diesel Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Auto Posto BR · 40,0 L · R$ 232,00 · R$ 5,80/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xgjBd",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "#0B1110",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "WnYhj",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "HOkiJ",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "q7LsQN",
+                  "name": "Registro Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Registro",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "c9yOW",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#143B2B",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Ldarm",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "#29A66A"
+                },
+                {
+                  "type": "text",
+                  "id": "Hjvsh",
+                  "name": "Histórico Tab Label",
+                  "fill": "#4AE08F",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "f2QrV",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "C05hg3",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "BqwQf",
+                  "name": "Veículos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "G8QytY",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "fYEr0",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "va6pK",
+                  "name": "Postos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "j2q3dE",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "aXv58",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "ccIWD",
+                  "name": "Config Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ThXNV",
+      "x": 2660,
+      "y": 0,
+      "name": "Veículos - Cadastro Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 390,
+      "fill": "#0B1110",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "IQI5I",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "#0B1110",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Q14KRB",
+              "name": "Status Time",
+              "fill": "#F4FBF6",
+              "content": "09:41",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "SQYqv",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "WA7rY",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "r9Nkh",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "w2UKyI",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qqhMK",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "#0B1110",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "FQFfr",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tE36Z",
+                  "name": "Screen Title",
+                  "fill": "#F4FBF6",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "hMGsY",
+                  "name": "Screen Subtitle",
+                  "fill": "#A8B6AD",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Cadastre os veículos usados nos abastecimentos e edite os dados quando precisar.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UVdOJ",
+              "name": "Vehicle Form",
+              "width": "fill_container",
+              "fill": "#141D1A",
+              "cornerRadius": 8,
+              "stroke": "#294139",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AWfXp",
+                  "name": "Vehicle Form Title",
+                  "fill": "#F4FBF6",
+                  "content": "Novo veículo",
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "Zaply",
+                  "name": "Nome ou placa Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "#0F1715",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "J0Ym6d",
+                      "name": "Nome ou placa Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "car",
+                      "library": "lucide",
+                      "fill": "#7E9086"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HLUB7",
+                      "name": "Nome ou placa Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "p1rfV",
+                          "name": "Nome ou placa Label",
+                          "fill": "#A8B6AD",
+                          "content": "Nome ou placa",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "gSftn",
+                          "name": "Nome ou placa Value",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SYHmD",
+                  "name": "Observação Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "#0F1715",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "mvWgI",
+                      "name": "Observação Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "file-text",
+                      "library": "lucide",
+                      "fill": "#7E9086"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "nwHYI",
+                      "name": "Observação Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "RfPIP",
+                          "name": "Observação Label",
+                          "fill": "#A8B6AD",
+                          "content": "Observação",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "hPDvW",
+                          "name": "Observação Value",
+                          "fill": "#F4FBF6",
+                          "content": "Uso principal",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ugxu1",
+                  "name": "Salvar veículo Button",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#29A66A",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "w5uY6X",
+                      "name": "Salvar veículo Icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "check",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Eg5Nq",
+                      "name": "Salvar veículo Label",
+                      "fill": "#FFFFFF",
+                      "content": "Salvar veículo",
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MJoLM",
+              "name": "Vehicles List",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wNul4",
+                  "name": "Vehicles List Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WsdRE",
+                      "name": "Vehicles List Title",
+                      "fill": "#F4FBF6",
+                      "content": "Veículos cadastrados",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "y78ZyK",
+                      "name": "Vehicles Count",
+                      "fill": "#4AE08F",
+                      "content": "3 veículos",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lFwGt",
+                  "name": "Meu veículo Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "sIhBP",
+                      "name": "Meu veículo Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "tRWSg",
+                          "name": "Meu veículo Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "car",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "cVE4E",
+                      "name": "Meu veículo Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e8nZH",
+                          "name": "Meu veículo Title",
+                          "fill": "#F4FBF6",
+                          "content": "Meu veículo",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "YCDNO",
+                          "name": "Meu veículo Meta",
+                          "fill": "#A8B6AD",
+                          "content": "Último abastecimento hoje",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "iRhuQ",
+                          "name": "Meu veículo Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Km 12.480 · Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wfVpd",
+                      "name": "Meu veículo Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "MhWK3",
+                          "name": "Meu veículo Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SjJaV",
+                  "name": "Moto CG Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "u59uf",
+                      "name": "Moto CG Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "rKfUE",
+                          "name": "Moto CG Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "car",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "glG35",
+                      "name": "Moto CG Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "t9yVg2",
+                          "name": "Moto CG Title",
+                          "fill": "#F4FBF6",
+                          "content": "Moto CG",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ymjrq",
+                          "name": "Moto CG Meta",
+                          "fill": "#A8B6AD",
+                          "content": "Último abastecimento 22 jun",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "aNloE",
+                          "name": "Moto CG Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Km 31.840 · Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ORJes",
+                      "name": "Moto CG Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "nq3td",
+                          "name": "Moto CG Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NuO1p",
+                  "name": "Caminhonete Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "tybAy",
+                      "name": "Caminhonete Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "lEqmD",
+                          "name": "Caminhonete Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "car",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "v2Dnsy",
+                      "name": "Caminhonete Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lPMye",
+                          "name": "Caminhonete Title",
+                          "fill": "#F4FBF6",
+                          "content": "Caminhonete",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "a6sCR",
+                          "name": "Caminhonete Meta",
+                          "fill": "#A8B6AD",
+                          "content": "Sem abastecimento recente",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "u2NPy",
+                          "name": "Caminhonete Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Diesel",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "r0CXK",
+                      "name": "Caminhonete Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "LgFyN",
+                          "name": "Caminhonete Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "H2FPTt",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "#0B1110",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "fycAc",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "HoKHc",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "c6OR1",
+                  "name": "Registro Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Registro",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pQNvB",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "dwfiu",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "CPZ5I",
+                  "name": "Histórico Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "t5VEz",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#143B2B",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "zzIFB",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "#29A66A"
+                },
+                {
+                  "type": "text",
+                  "id": "zZKIN",
+                  "name": "Veículos Tab Label",
+                  "fill": "#4AE08F",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qXQo7",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "a37CO",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "BENe0",
+                  "name": "Postos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "y3DwV",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "eCkgh",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "ZMpiQ",
+                  "name": "Config Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "T4GNu8",
+      "x": 3090,
+      "y": 0,
+      "name": "Postos - Cadastro Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 390,
+      "fill": "#0B1110",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "d19jAO",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "#0B1110",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "otwoC",
+              "name": "Status Time",
+              "fill": "#F4FBF6",
+              "content": "09:41",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "FJw6d",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Vazxb",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "pHmWI",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "qGKYz",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Fj27t",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "#0B1110",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "K4qQeN",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vSkXz",
+                  "name": "Screen Title",
+                  "fill": "#F4FBF6",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "n2UCng",
+                  "name": "Screen Subtitle",
+                  "fill": "#A8B6AD",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Mantenha uma lista de postos para agilizar o cadastro dos abastecimentos.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "u02lzs",
+              "name": "Station Form",
+              "width": "fill_container",
+              "fill": "#141D1A",
+              "cornerRadius": 8,
+              "stroke": "#294139",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "k7Egk",
+                  "name": "Station Form Title",
+                  "fill": "#F4FBF6",
+                  "content": "Novo posto",
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "CFVyQ",
+                  "name": "Nome do posto Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "#0F1715",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "OGG2X",
+                      "name": "Nome do posto Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "fuel",
+                      "library": "lucide",
+                      "fill": "#7E9086"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zEUXh",
+                      "name": "Nome do posto Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PB5f9",
+                          "name": "Nome do posto Label",
+                          "fill": "#A8B6AD",
+                          "content": "Nome do posto",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "CJr3F",
+                          "name": "Nome do posto Value",
+                          "fill": "#F4FBF6",
+                          "content": "Posto Central",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NdKc7",
+                  "name": "Endereço Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "#0F1715",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "YD0Jf",
+                      "name": "Endereço Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "map-pin",
+                      "library": "lucide",
+                      "fill": "#7E9086"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gNVMA",
+                      "name": "Endereço Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "l3vLW",
+                          "name": "Endereço Label",
+                          "fill": "#A8B6AD",
+                          "content": "Endereço",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Z34Cp",
+                          "name": "Endereço Value",
+                          "fill": "#F4FBF6",
+                          "content": "Av. Brasil, 1200",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T4XTm",
+                  "name": "Salvar posto Button",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#29A66A",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "fmZJV",
+                      "name": "Salvar posto Icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "check",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pkhwe",
+                      "name": "Salvar posto Label",
+                      "fill": "#FFFFFF",
+                      "content": "Salvar posto",
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "d5e5O9",
+              "name": "Stations List",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nBniO",
+                  "name": "Stations List Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "O7cU0J",
+                      "name": "Stations List Title",
+                      "fill": "#F4FBF6",
+                      "content": "Postos cadastrados",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "aQxUX",
+                      "name": "Stations Count",
+                      "fill": "#4AE08F",
+                      "content": "3 postos",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xdLTz",
+                  "name": "Posto Central Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "a1oAK",
+                      "name": "Posto Central Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "EQhdE",
+                          "name": "Posto Central Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IAKgh",
+                      "name": "Posto Central Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "H4QHb",
+                          "name": "Posto Central Title",
+                          "fill": "#F4FBF6",
+                          "content": "Posto Central",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "K8IM78",
+                          "name": "Posto Central Meta",
+                          "fill": "#A8B6AD",
+                          "content": "Av. Brasil, 1200",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rwQ5m",
+                          "name": "Posto Central Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Último preço: R$ 5,99/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qmrrS",
+                      "name": "Posto Central Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "rEgw5",
+                          "name": "Posto Central Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jGxU0",
+                  "name": "Posto Avenida Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "gKSkh",
+                      "name": "Posto Avenida Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "E8185j",
+                          "name": "Posto Avenida Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "l2CxTG",
+                      "name": "Posto Avenida Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SBhGB",
+                          "name": "Posto Avenida Title",
+                          "fill": "#F4FBF6",
+                          "content": "Posto Avenida",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "scEKh",
+                          "name": "Posto Avenida Meta",
+                          "fill": "#A8B6AD",
+                          "content": "Av. Principal, 455",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "eRZF6",
+                          "name": "Posto Avenida Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Último preço: R$ 4,36/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "A2weKh",
+                      "name": "Posto Avenida Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Rh2bD",
+                          "name": "Posto Avenida Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "g77xO",
+                  "name": "Auto Posto BR Row",
+                  "width": "fill_container",
+                  "fill": "#141D1A",
+                  "cornerRadius": 8,
+                  "stroke": "#294139",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Fobcf",
+                      "name": "Auto Posto BR Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "tGuMi",
+                          "name": "Auto Posto BR Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "WkiQG",
+                      "name": "Auto Posto BR Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "eRfRk",
+                          "name": "Auto Posto BR Title",
+                          "fill": "#F4FBF6",
+                          "content": "Auto Posto BR",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "l4JTWp",
+                          "name": "Auto Posto BR Meta",
+                          "fill": "#A8B6AD",
+                          "content": "BR-364, km 18",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "QYXVs",
+                          "name": "Auto Posto BR Detail",
+                          "fill": "#A8B6AD",
+                          "content": "Último preço: R$ 5,80/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ocy4g",
+                      "name": "Auto Posto BR Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "G9PyX5",
+                          "name": "Auto Posto BR Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "FzTbJ",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "#0B1110",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "TMqKl",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "jXeWz",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "AlHPK",
+                  "name": "Registro Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Registro",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CBud2",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "TDazO",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "AXrJ5",
+                  "name": "Histórico Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VMJdu",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "emDRc",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "F3snNT",
+                  "name": "Veículos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xtM81",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#143B2B",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "hSpDX",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "#29A66A"
+                },
+                {
+                  "type": "text",
+                  "id": "d80T2x",
+                  "name": "Postos Tab Label",
+                  "fill": "#4AE08F",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "x6JfNA",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "AXsKF",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "gmiiF",
+                  "name": "Config Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "mZAeX",
+      "x": 3560,
+      "y": 0,
+      "name": "Configurações",
+      "theme": {
+        "mode": "light"
+      },
+      "clip": true,
+      "width": 390,
+      "fill": "#F7F7F2",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "lH8nG",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "#F7F7F2",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "MuMrP",
+              "name": "Status Time",
+              "fill": "#20231F",
+              "content": "09:41",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "bC0WY",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "nZLCB",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "#20231F"
+                },
+                {
+                  "type": "icon",
+                  "id": "m6LShc",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "#20231F"
+                },
+                {
+                  "type": "icon",
+                  "id": "iqIDA",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "#20231F"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "b5tCEx",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "#F7F7F2",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "B9pvdz",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "PTAOn",
+                  "name": "Screen Title",
+                  "fill": "#20231F",
+                  "content": "Configurações",
+                  "fontFamily": "Inter",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "RKtD6",
+                  "name": "Screen Subtitle",
+                  "fill": "#60685F",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Ajuste preferências do aplicativo e escolha como a interface deve aparecer.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HTJal",
+              "name": "Appearance Settings",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": "#DDE3DA",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "R6nGg",
+                  "name": "Appearance Title",
+                  "fill": "#20231F",
+                  "content": "Aparência",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "X2w6c",
+                  "name": "Dark Mode Row",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jjFRY",
+                      "name": "Theme Icon Container",
+                      "width": 38,
+                      "height": 38,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "q3VwTt",
+                          "name": "Theme Icon",
+                          "width": 19,
+                          "height": 19,
+                          "icon": "sun",
+                          "library": "lucide",
+                          "fill": "#16734D"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Drt1V",
+                      "name": "Dark Mode Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "O9stn",
+                          "name": "Dark Mode Title",
+                          "fill": "#20231F",
+                          "content": "Tema escuro",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "nMHcP",
+                          "name": "Dark Mode Description",
+                          "fill": "#60685F",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Ative para usar fundo escuro e economia visual à noite.",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "d9m1CA",
+                      "name": "Dark Mode Toggle Off",
+                      "width": 54,
+                      "height": 30,
+                      "fill": "#F9FAF7",
+                      "cornerRadius": 16,
+                      "stroke": "#DDE3DA",
+                      "strokeWidth": 1,
+                      "padding": [
+                        0,
+                        4
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "i5raB",
+                          "name": "Toggle Knob",
+                          "fill": "#FFFFFF",
+                          "width": 22,
+                          "height": 22,
+                          "stroke": "#DDE3DA",
+                          "strokeWidth": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dQJ36",
+              "name": "App Preferences",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": "#DDE3DA",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aqeF8",
+                  "name": "Preferences Title",
+                  "fill": "#20231F",
+                  "content": "Aplicativo",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "OO2x0",
+                  "name": "Lembretes Row",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jWLy4",
+                      "name": "Bell Icon Container",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#F9FAF7",
+                      "cornerRadius": 8,
+                      "stroke": "#DDE3DA",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ALzFO",
+                          "name": "Bell Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "bell",
+                          "library": "lucide",
+                          "fill": "#60685F"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "K1iSB",
+                      "name": "Lembretes Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gOtMv",
+                          "name": "Lembretes Title",
+                          "fill": "#20231F",
+                          "content": "Lembretes",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ncfnW",
+                          "name": "Lembretes Description",
+                          "fill": "#60685F",
+                          "content": "Alertas de abastecimento em breve",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ZlxJP",
+                  "name": "Dados locais Row",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qIpzM",
+                      "name": "Shield Icon Container",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#F9FAF7",
+                      "cornerRadius": 8,
+                      "stroke": "#DDE3DA",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "vOEIX",
+                          "name": "Shield Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "shield-check",
+                          "library": "lucide",
+                          "fill": "#60685F"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zB3qR",
+                      "name": "Dados locais Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m3Jxc6",
+                          "name": "Dados locais Title",
+                          "fill": "#20231F",
+                          "content": "Dados locais",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bT7GS",
+                          "name": "Dados locais Description",
+                          "fill": "#60685F",
+                          "content": "Registros salvos somente neste aparelho",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wxRTK",
+              "name": "Version Card",
+              "width": "fill_container",
+              "fill": "#F9FAF7",
+              "cornerRadius": 8,
+              "stroke": "#DDE3DA",
+              "strokeWidth": 1,
+              "gap": 10,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "C0wkW6",
+                  "name": "Info Icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "info",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "OsrgS",
+                  "name": "Version Text",
+                  "fill": "#60685F",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Controle Gasolina · versão 1.0",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "n5TrA",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "#F7F7F2",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "f3SIIU",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "hVwFj",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "j5d5o8",
+                  "name": "Registro Tab Label",
+                  "fill": "#60685F",
+                  "content": "Registro",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lnFYn",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "k5k4g",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "QfHwP",
+                  "name": "Histórico Tab Label",
+                  "fill": "#60685F",
+                  "content": "Histórico",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bVDqY",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "HBLqN",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "NoU41",
+                  "name": "Veículos Tab Label",
+                  "fill": "#60685F",
+                  "content": "Veículos",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fbNqZ",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "b9PaWX",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "#60685F"
+                },
+                {
+                  "type": "text",
+                  "id": "SKOto",
+                  "name": "Postos Tab Label",
+                  "fill": "#60685F",
+                  "content": "Postos",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wCSeE",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#E9F3EC",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "WrvOM",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#16734D"
+                },
+                {
+                  "type": "text",
+                  "id": "UeQV8",
+                  "name": "Config Tab Label",
+                  "fill": "#16734D",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "qQQ54",
+      "x": 3990,
+      "y": 0,
+      "name": "Configurações Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 390,
+      "fill": "#0B1110",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "x3wAv1",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "#0B1110",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "pPkXJ",
+              "name": "Status Time",
+              "fill": "#F4FBF6",
+              "content": "09:41",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "tJODp",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "V4Qze",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "U4i9p",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                },
+                {
+                  "type": "icon",
+                  "id": "Am8hK",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "#F4FBF6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "E2nc2F",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "#0B1110",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "u9ywo",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "PBF3L",
+                  "name": "Screen Title",
+                  "fill": "#F4FBF6",
+                  "content": "Configurações",
+                  "fontFamily": "Inter",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "MjZhO",
+                  "name": "Screen Subtitle",
+                  "fill": "#A8B6AD",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Ajuste preferências do aplicativo e escolha como a interface deve aparecer.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "I3e3LW",
+              "name": "Appearance Settings",
+              "width": "fill_container",
+              "fill": "#141D1A",
+              "cornerRadius": 8,
+              "stroke": "#294139",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "K2UG1",
+                  "name": "Appearance Title",
+                  "fill": "#F4FBF6",
+                  "content": "Aparência",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "U3nfq5",
+                  "name": "Dark Mode Row",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "UHFSq",
+                      "name": "Theme Icon Container",
+                      "width": 38,
+                      "height": 38,
+                      "fill": "#143B2B",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "T2qyr",
+                          "name": "Theme Icon",
+                          "width": 19,
+                          "height": 19,
+                          "icon": "moon",
+                          "library": "lucide",
+                          "fill": "#29A66A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "k3mtCo",
+                      "name": "Dark Mode Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "LDvpx",
+                          "name": "Dark Mode Title",
+                          "fill": "#F4FBF6",
+                          "content": "Tema escuro",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RnDCi",
+                          "name": "Dark Mode Description",
+                          "fill": "#A8B6AD",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Ativado para reduzir brilho e manter contraste alto.",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HsHYB",
+                      "name": "Dark Mode Toggle On",
+                      "width": 54,
+                      "height": 30,
+                      "fill": "#29A66A",
+                      "cornerRadius": 16,
+                      "stroke": "#29A66A",
+                      "strokeWidth": 1,
+                      "padding": [
+                        0,
+                        4
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "WRwyG",
+                          "layoutPosition": "absolute",
+                          "x": 27,
+                          "y": 3,
+                          "name": "Toggle Knob",
+                          "fill": "#F4FBF6",
+                          "width": 22,
+                          "height": 22,
+                          "stroke": "#F4FBF6",
+                          "strokeWidth": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dzNJm",
+              "name": "App Preferences",
+              "width": "fill_container",
+              "fill": "#141D1A",
+              "cornerRadius": 8,
+              "stroke": "#294139",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "NBc1H",
+                  "name": "Preferences Title",
+                  "fill": "#F4FBF6",
+                  "content": "Aplicativo",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "Goyhv",
+                  "name": "Lembretes Row",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dTnBX",
+                      "name": "Bell Icon Container",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "jvJcg",
+                          "name": "Bell Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "bell",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AW2AZ",
+                      "name": "Lembretes Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BjsBj",
+                          "name": "Lembretes Title",
+                          "fill": "#F4FBF6",
+                          "content": "Lembretes",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "QGAUr",
+                          "name": "Lembretes Description",
+                          "fill": "#A8B6AD",
+                          "content": "Alertas de abastecimento em breve",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Hnl5e",
+                  "name": "Dados locais Row",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "iWNAi",
+                      "name": "Shield Icon Container",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#0F1715",
+                      "cornerRadius": 8,
+                      "stroke": "#294139",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "l3l0X",
+                          "name": "Shield Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "shield-check",
+                          "library": "lucide",
+                          "fill": "#7E9086"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AhpRI",
+                      "name": "Dados locais Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ncflw",
+                          "name": "Dados locais Title",
+                          "fill": "#F4FBF6",
+                          "content": "Dados locais",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "y3vvBn",
+                          "name": "Dados locais Description",
+                          "fill": "#A8B6AD",
+                          "content": "Registros salvos somente neste aparelho",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mOaDu",
+              "name": "Version Card",
+              "width": "fill_container",
+              "fill": "#0F1715",
+              "cornerRadius": 8,
+              "stroke": "#294139",
+              "strokeWidth": 1,
+              "gap": 10,
+              "padding": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "VbIHx",
+                  "name": "Info Icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "info",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "JMRqK",
+                  "name": "Version Text",
+                  "fill": "#A8B6AD",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Controle Gasolina · versão 1.0",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kg1SD",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "#0B1110",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "TFGAV",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "opHer",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "P5JIq",
+                  "name": "Registro Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Registro",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "x9Rzo",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "pUZnc",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "uwQ6G",
+                  "name": "Histórico Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Histórico",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "V0faE7",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "XrhDD",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "VImig",
+                  "name": "Veículos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Veículos",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VHhRg",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "nrrGj",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "#7E9086"
+                },
+                {
+                  "type": "text",
+                  "id": "yf6AB",
+                  "name": "Postos Tab Label",
+                  "fill": "#7E9086",
+                  "content": "Postos",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "N3hAj",
+              "name": "Config Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#143B2B",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "z6iPc",
+                  "name": "Config Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "#4AE08F"
+                },
+                {
+                  "type": "text",
+                  "id": "TtIsf",
+                  "name": "Config Tab Label",
+                  "fill": "#4AE08F",
+                  "content": "Config",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
             }
           ]
         }
       ]
     }
   ],
+  "themes": {
+    "mode": [
+      "light",
+      "dark"
+    ]
+  },
   "variables": {
     "brand-green": {
       "type": "color",
-      "value": "#16734D"
+      "value": [
+        {
+          "value": "#16734D",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#29A66A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "brand-green-dark": {
       "type": "color",
-      "value": "#0D4D34"
+      "value": [
+        {
+          "value": "#0D4D34",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#4AE08F",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "screen-bg": {
       "type": "color",
-      "value": "#F7F7F2"
+      "value": [
+        {
+          "value": "#F7F7F2",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#0B1110",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "card-bg": {
       "type": "color",
-      "value": "#FFFFFF"
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#141D1A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "text-primary": {
       "type": "color",
-      "value": "#20231F"
+      "value": [
+        {
+          "value": "#20231F",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#F4FBF6",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "text-secondary": {
       "type": "color",
-      "value": "#60685F"
+      "value": [
+        {
+          "value": "#60685F",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#A8B6AD",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "line-soft": {
       "type": "color",
-      "value": "#DDE3DA"
+      "value": [
+        {
+          "value": "#DDE3DA",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#294139",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "field-bg": {
       "type": "color",
-      "value": "#F9FAF7"
+      "value": [
+        {
+          "value": "#F9FAF7",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#0F1715",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "accent-warm": {
       "type": "color",
-      "value": "#F2B84B"
+      "value": [
+        {
+          "value": "#F2B84B",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#E9C46A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     },
     "font-body": {
       "type": "string",
       "value": "Inter"
+    },
+    "surface-selected": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E9F3EC",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#143B2B",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "warning-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFF7E1",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#33260C",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "warning-text": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#6D5212",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#E9C46A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
     }
   },
   "fileToken": "c7c1ffdb-0b8a-4c2c-9ba6-2bd4e7fcdd7a"

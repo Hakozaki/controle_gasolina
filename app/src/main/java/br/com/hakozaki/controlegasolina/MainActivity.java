@@ -53,6 +53,9 @@ public class MainActivity extends Activity {
     private EditText litersInput;
     private EditText totalValueInput;
     private TextView locationText;
+    private TextView litersSummaryText;
+    private TextView totalSummaryText;
+    private TextView historyCountText;
     private LinearLayout historyContainer;
     private Location lastLocation;
 
@@ -68,27 +71,36 @@ public class MainActivity extends Activity {
     }
 
     private View buildContent() {
+        LinearLayout screen = new LinearLayout(this);
+        screen.setOrientation(LinearLayout.VERTICAL);
+        screen.setBackgroundColor(color(R.color.screen_background));
+
         ScrollView scrollView = new ScrollView(this);
-        scrollView.setFillViewport(true);
+        scrollView.setFillViewport(false);
+        screen.addView(scrollView, new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                0,
+                1
+        ));
 
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
-        root.setPadding(dp(18), dp(20), dp(18), dp(28));
+        root.setPadding(dp(18), dp(22), dp(18), dp(18));
         root.setBackgroundColor(color(R.color.screen_background));
         scrollView.addView(root);
 
         TextView title = new TextView(this);
         title.setText("Controle Gasolina");
         title.setTextColor(color(R.color.text_primary));
-        title.setTextSize(26);
+        title.setTextSize(28);
         title.setTypeface(Typeface.DEFAULT_BOLD);
         root.addView(title);
 
         TextView subtitle = new TextView(this);
-        subtitle.setText("Registre os abastecimentos dos seus veiculos.");
+        subtitle.setText("Registre o abastecimento e acompanhe o custo por litro.");
         subtitle.setTextColor(color(R.color.text_secondary));
-        subtitle.setTextSize(15);
-        subtitle.setPadding(0, dp(4), 0, dp(18));
+        subtitle.setTextSize(14);
+        subtitle.setPadding(0, dp(4), 0, dp(16));
         root.addView(subtitle);
 
         LinearLayout vehicleRow = new LinearLayout(this);
@@ -97,32 +109,49 @@ public class MainActivity extends Activity {
         root.addView(vehicleRow);
 
         vehicleSpinner = new Spinner(this);
-        vehicleRow.addView(vehicleSpinner, new LinearLayout.LayoutParams(0, dp(48), 1));
+        vehicleSpinner.setBackground(cardBackground(color(R.color.card_background), dp(8), color(R.color.border)));
+        vehicleSpinner.setPadding(dp(8), 0, dp(8), 0);
+        vehicleRow.addView(vehicleSpinner, new LinearLayout.LayoutParams(0, dp(54), 1));
 
         Button addVehicleButton = new Button(this);
         addVehicleButton.setText("+");
         addVehicleButton.setTextSize(22);
         addVehicleButton.setTextColor(color(android.R.color.white));
-        addVehicleButton.setBackground(cardBackground(color(R.color.brand_green), dp(8)));
+        addVehicleButton.setTypeface(Typeface.DEFAULT_BOLD);
+        addVehicleButton.setBackground(cardBackground(color(R.color.brand_green), dp(8), color(R.color.brand_green)));
         addVehicleButton.setOnClickListener(v -> showAddVehicleDialog());
-        LinearLayout.LayoutParams addVehicleParams = new LinearLayout.LayoutParams(dp(54), dp(48));
+        LinearLayout.LayoutParams addVehicleParams = new LinearLayout.LayoutParams(dp(54), dp(54));
         addVehicleParams.setMargins(dp(10), 0, 0, 0);
         vehicleRow.addView(addVehicleButton, addVehicleParams);
+
+        LinearLayout summaryRow = new LinearLayout(this);
+        summaryRow.setOrientation(LinearLayout.HORIZONTAL);
+        LinearLayout.LayoutParams summaryRowParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        summaryRowParams.setMargins(0, dp(16), 0, dp(16));
+        root.addView(summaryRow, summaryRowParams);
+
+        litersSummaryText = new TextView(this);
+        totalSummaryText = new TextView(this);
+        summaryRow.addView(summaryCard("Litros", "34,2 L", litersSummaryText), weightedCardParams(0));
+        summaryRow.addView(summaryCard("Total", "R$ 205,00", totalSummaryText), weightedCardParams(dp(10)));
 
         LinearLayout form = section();
         root.addView(form);
 
-        kmInput = input("Quilometragem atual (opcional)", InputType.TYPE_CLASS_NUMBER);
-        form.addView(label("Quilometragem"));
-        form.addView(kmInput);
+        LinearLayout formHeader = new LinearLayout(this);
+        formHeader.setOrientation(LinearLayout.HORIZONTAL);
+        formHeader.setGravity(Gravity.CENTER_VERTICAL);
+        form.addView(formHeader);
 
-        stationInput = input("Posto de combustivel", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-        form.addView(label("Posto"));
-        form.addView(stationInput);
-
-        litersInput = input("Litros", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        form.addView(label("Litros"));
-        form.addView(litersInput);
+        TextView formTitle = new TextView(this);
+        formTitle.setText("Novo abastecimento");
+        formTitle.setTextColor(color(R.color.text_primary));
+        formTitle.setTextSize(14);
+        formTitle.setTypeface(Typeface.DEFAULT_BOLD);
+        formHeader.addView(formTitle, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
 
         fuelTypeSpinner = new Spinner(this);
         ArrayAdapter<String> fuelAdapter = new ArrayAdapter<>(
@@ -131,42 +160,74 @@ public class MainActivity extends Activity {
                 new String[]{"Gasolina", "Etanol", "Diesel", "GNV", "Flex/Outro"}
         );
         fuelTypeSpinner.setAdapter(fuelAdapter);
-        form.addView(label("Tipo de combustivel"));
-        form.addView(fuelTypeSpinner, fieldParams());
+        fuelTypeSpinner.setBackground(cardBackground(color(R.color.brand_green_soft), dp(12), color(R.color.brand_green_soft)));
+        fuelTypeSpinner.setPadding(dp(6), 0, dp(6), 0);
+        formHeader.addView(fuelTypeSpinner, new LinearLayout.LayoutParams(dp(118), dp(36)));
 
-        totalValueInput = input("Valor total em R$", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        form.addView(label("Valor"));
-        form.addView(totalValueInput);
+        LinearLayout valueRow = new LinearLayout(this);
+        valueRow.setOrientation(LinearLayout.HORIZONTAL);
+        valueRow.setPadding(0, dp(12), 0, 0);
+        form.addView(valueRow);
+
+        litersInput = input("34,2", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        valueRow.addView(inputBlock("Litros", litersInput), weightedCardParams(0));
+
+        totalValueInput = input("R$ 205,00", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        valueRow.addView(inputBlock("Valor", totalValueInput), weightedCardParams(dp(8)));
+
+        kmInput = input("Quilometragem atual (opcional)", InputType.TYPE_CLASS_NUMBER);
+        form.addView(spacedField("Quilometragem", kmInput));
+
+        stationInput = input("Posto de combustivel", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+        form.addView(spacedField("Posto", stationInput));
 
         locationText = new TextView(this);
         locationText.setText("GPS: aguardando permissao");
-        locationText.setTextColor(color(R.color.text_secondary));
-        locationText.setTextSize(14);
-        locationText.setPadding(0, dp(10), 0, dp(10));
-        form.addView(locationText);
+        locationText.setTextColor(color(R.color.warning_text));
+        locationText.setTextSize(12);
+        locationText.setBackground(cardBackground(color(R.color.warning_background), dp(8), color(R.color.warning_background)));
+        locationText.setPadding(dp(10), dp(8), dp(10), dp(8));
+        LinearLayout.LayoutParams locationParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        locationParams.setMargins(0, dp(10), 0, dp(10));
+        form.addView(locationText, locationParams);
 
         Button saveButton = new Button(this);
         saveButton.setText("Salvar abastecimento");
         saveButton.setTextColor(color(android.R.color.white));
-        saveButton.setTextSize(16);
+        saveButton.setTextSize(14);
         saveButton.setTypeface(Typeface.DEFAULT_BOLD);
-        saveButton.setBackground(cardBackground(color(R.color.brand_green), dp(8)));
+        saveButton.setBackground(cardBackground(color(R.color.brand_green), dp(8), color(R.color.brand_green)));
         saveButton.setOnClickListener(v -> saveRefuel());
         form.addView(saveButton, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(52)));
 
-        TextView historyTitle = new TextView(this);
-        historyTitle.setText("Historico");
-        historyTitle.setTextColor(color(R.color.text_primary));
-        historyTitle.setTextSize(20);
-        historyTitle.setTypeface(Typeface.DEFAULT_BOLD);
-        historyTitle.setPadding(0, dp(22), 0, dp(10));
-        root.addView(historyTitle);
+        LinearLayout historyHeader = new LinearLayout(this);
+        historyHeader.setGravity(Gravity.CENTER_VERTICAL);
+        historyHeader.setPadding(0, dp(18), 0, dp(10));
+        root.addView(historyHeader);
+
+        TextView historyTitle = sectionTitle("Historico");
+        historyHeader.addView(historyTitle, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+
+        historyCountText = new TextView(this);
+        historyCountText.setText("0 registros");
+        historyCountText.setTextColor(color(R.color.brand_green));
+        historyCountText.setTextSize(12);
+        historyCountText.setTypeface(Typeface.DEFAULT_BOLD);
+        historyHeader.addView(historyCountText);
 
         historyContainer = new LinearLayout(this);
         historyContainer.setOrientation(LinearLayout.VERTICAL);
         root.addView(historyContainer);
 
-        return scrollView;
+        screen.addView(bottomNavigation(), new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                dp(76)
+        ));
+
+        return screen;
     }
 
     private void showAddVehicleDialog() {
@@ -284,6 +345,7 @@ public class MainActivity extends Activity {
         historyContainer.removeAllViews();
         try {
             JSONArray refuels = getArray(KEY_REFUELS);
+            updateSummary(refuels);
             if (refuels.length() == 0) {
                 TextView empty = new TextView(this);
                 empty.setText("Nenhum abastecimento cadastrado ainda.");
@@ -304,9 +366,10 @@ public class MainActivity extends Activity {
 
     private View historyCard(JSONObject item) throws JSONException {
         LinearLayout card = new LinearLayout(this);
-        card.setOrientation(LinearLayout.VERTICAL);
+        card.setOrientation(LinearLayout.HORIZONTAL);
+        card.setGravity(Gravity.CENTER_VERTICAL);
         card.setPadding(dp(14), dp(12), dp(14), dp(12));
-        card.setBackground(cardBackground(color(R.color.card_background), dp(8)));
+        card.setBackground(cardBackground(color(R.color.card_background), dp(8), color(R.color.border)));
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -314,12 +377,26 @@ public class MainActivity extends Activity {
         params.setMargins(0, 0, 0, dp(10));
         card.setLayoutParams(params);
 
+        TextView icon = new TextView(this);
+        icon.setText("B");
+        icon.setTextColor(color(R.color.brand_green));
+        icon.setGravity(Gravity.CENTER);
+        icon.setTypeface(Typeface.DEFAULT_BOLD);
+        icon.setBackground(cardBackground(color(R.color.brand_green_soft), dp(8), color(R.color.brand_green_soft)));
+        card.addView(icon, new LinearLayout.LayoutParams(dp(34), dp(34)));
+
+        LinearLayout content = new LinearLayout(this);
+        content.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams contentParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+        contentParams.setMargins(dp(10), 0, 0, 0);
+        card.addView(content, contentParams);
+
         TextView title = new TextView(this);
         title.setText(item.getString("vehicle") + " - " + item.getString("fuelType"));
         title.setTextColor(color(R.color.text_primary));
         title.setTypeface(Typeface.DEFAULT_BOLD);
-        title.setTextSize(16);
-        card.addView(title);
+        title.setTextSize(13);
+        content.addView(title);
 
         double liters = item.getDouble("liters");
         double total = item.getDouble("totalValue");
@@ -339,9 +416,9 @@ public class MainActivity extends Activity {
         TextView body = new TextView(this);
         body.setText(details);
         body.setTextColor(color(R.color.text_secondary));
-        body.setTextSize(14);
-        body.setPadding(0, dp(6), 0, 0);
-        card.addView(body);
+        body.setTextSize(11);
+        body.setPadding(0, dp(4), 0, 0);
+        content.addView(body);
 
         return card;
     }
@@ -417,6 +494,8 @@ public class MainActivity extends Activity {
     private void updateLocation(Location location) {
         lastLocation = location;
         locationText.setText(String.format(Locale.getDefault(), "GPS: %.5f, %.5f", location.getLatitude(), location.getLongitude()));
+        locationText.setTextColor(color(R.color.brand_green));
+        locationText.setBackground(cardBackground(color(R.color.brand_green_soft), dp(8), color(R.color.brand_green_soft)));
     }
 
     @Override
@@ -454,32 +533,22 @@ public class MainActivity extends Activity {
         input.setTextColor(color(R.color.text_primary));
         input.setHintTextColor(color(R.color.text_secondary));
         input.setInputType(inputType);
-        input.setBackground(cardBackground(color(android.R.color.white), dp(8)));
+        input.setTextSize(13);
+        input.setBackground(cardBackground(color(R.color.field_background), dp(8), color(R.color.border)));
         input.setPadding(dp(12), 0, dp(12), 0);
         input.setLayoutParams(fieldParams());
         return input;
     }
 
-    private TextView label(String text) {
-        TextView label = new TextView(this);
-        label.setText(text);
-        label.setTextColor(color(R.color.text_primary));
-        label.setTypeface(Typeface.DEFAULT_BOLD);
-        label.setTextSize(14);
-        label.setPadding(0, dp(12), 0, dp(6));
-        return label;
-    }
-
     private LinearLayout section() {
         LinearLayout section = new LinearLayout(this);
         section.setOrientation(LinearLayout.VERTICAL);
-        section.setPadding(dp(14), dp(10), dp(14), dp(14));
-        section.setBackground(cardBackground(color(R.color.card_background), dp(8)));
+        section.setPadding(dp(14), dp(12), dp(14), dp(14));
+        section.setBackground(cardBackground(color(R.color.card_background), dp(8), color(R.color.border)));
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        params.setMargins(0, dp(16), 0, 0);
         section.setLayoutParams(params);
         return section;
     }
@@ -488,12 +557,134 @@ public class MainActivity extends Activity {
         return new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(48));
     }
 
-    private GradientDrawable cardBackground(int fillColor, int radius) {
+    private GradientDrawable cardBackground(int fillColor, int radius, int strokeColor) {
         GradientDrawable drawable = new GradientDrawable();
         drawable.setColor(fillColor);
         drawable.setCornerRadius(radius);
-        drawable.setStroke(dp(1), 0x1F000000);
+        drawable.setStroke(dp(1), strokeColor);
         return drawable;
+    }
+
+    private LinearLayout summaryCard(String label, String fallback, TextView valueView) {
+        LinearLayout card = new LinearLayout(this);
+        card.setOrientation(LinearLayout.VERTICAL);
+        card.setPadding(dp(14), dp(12), dp(14), dp(12));
+        card.setBackground(cardBackground(color(R.color.card_background), dp(8), color(R.color.border)));
+
+        TextView labelView = new TextView(this);
+        labelView.setText(label);
+        labelView.setTextColor(color(R.color.text_secondary));
+        labelView.setTextSize(11);
+        card.addView(labelView);
+
+        valueView.setText(fallback);
+        valueView.setTextColor(color(R.color.text_primary));
+        valueView.setTextSize(18);
+        valueView.setTypeface(Typeface.DEFAULT_BOLD);
+        valueView.setPadding(0, dp(6), 0, 0);
+        card.addView(valueView);
+
+        return card;
+    }
+
+    private LinearLayout inputBlock(String label, EditText input) {
+        LinearLayout block = new LinearLayout(this);
+        block.setOrientation(LinearLayout.VERTICAL);
+
+        TextView labelView = smallLabel(label);
+        block.addView(labelView);
+        block.addView(input, fieldParams());
+
+        return block;
+    }
+
+    private LinearLayout spacedField(String label, EditText input) {
+        LinearLayout block = inputBlock(label, input);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.setMargins(0, dp(8), 0, 0);
+        block.setLayoutParams(params);
+        return block;
+    }
+
+    private TextView smallLabel(String text) {
+        TextView label = new TextView(this);
+        label.setText(text);
+        label.setTextColor(color(R.color.text_secondary));
+        label.setTypeface(Typeface.DEFAULT_BOLD);
+        label.setTextSize(11);
+        label.setPadding(0, 0, 0, dp(4));
+        return label;
+    }
+
+    private TextView sectionTitle(String text) {
+        TextView title = new TextView(this);
+        title.setText(text);
+        title.setTextColor(color(R.color.text_primary));
+        title.setTextSize(16);
+        title.setTypeface(Typeface.DEFAULT_BOLD);
+        return title;
+    }
+
+    private LinearLayout.LayoutParams weightedCardParams(int leftMargin) {
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        );
+        params.setMargins(leftMargin, 0, 0, 0);
+        return params;
+    }
+
+    private View bottomNavigation() {
+        LinearLayout nav = new LinearLayout(this);
+        nav.setOrientation(LinearLayout.HORIZONTAL);
+        nav.setGravity(Gravity.CENTER);
+        nav.setPadding(dp(16), dp(10), dp(16), dp(14));
+        nav.setBackgroundColor(color(R.color.screen_background));
+
+        nav.addView(navItem("Registro", true), weightedNavParams(0));
+        nav.addView(navItem("Historico", false), weightedNavParams(dp(6)));
+        nav.addView(navItem("Veiculos", false), weightedNavParams(dp(6)));
+        nav.addView(navItem("Postos", false), weightedNavParams(dp(6)));
+
+        return nav;
+    }
+
+    private TextView navItem(String text, boolean selected) {
+        TextView item = new TextView(this);
+        item.setText(text);
+        item.setGravity(Gravity.CENTER);
+        item.setTextSize(11);
+        item.setTypeface(Typeface.DEFAULT_BOLD);
+        item.setTextColor(color(selected ? R.color.brand_green : R.color.text_secondary));
+        item.setBackground(cardBackground(
+                color(selected ? R.color.brand_green_soft : R.color.screen_background),
+                dp(24),
+                color(selected ? R.color.brand_green_soft : R.color.screen_background)
+        ));
+        return item;
+    }
+
+    private LinearLayout.LayoutParams weightedNavParams(int leftMargin) {
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, dp(52), 1);
+        params.setMargins(leftMargin, 0, 0, 0);
+        return params;
+    }
+
+    private void updateSummary(JSONArray refuels) throws JSONException {
+        double totalLiters = 0;
+        double totalValue = 0;
+        for (int i = 0; i < refuels.length(); i++) {
+            JSONObject item = refuels.getJSONObject(i);
+            totalLiters += item.optDouble("liters", 0);
+            totalValue += item.optDouble("totalValue", 0);
+        }
+        litersSummaryText.setText(String.format(Locale.getDefault(), "%.1f L", totalLiters));
+        totalSummaryText.setText(moneyFormat.format(totalValue));
+        historyCountText.setText(refuels.length() == 1 ? "1 registro" : refuels.length() + " registros");
     }
 
     private double parseDecimal(String text) {
