@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_green">#16734D</color>
+    <color name="brand_green_dark">#0D4D34</color>
+    <color name="screen_background">#F7F7F2</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#20231F</color>
+    <color name="text_secondary">#60685F</color>
+</resources>
