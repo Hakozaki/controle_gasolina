@@ -138,42 +138,42 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "su2HT",
-                  "name": "Selected Vehicle",
-                  "width": "fill_container",
-                  "height": "fill_container",
-                  "fill": "$card-bg",
+                  "id": "BZwms",
+                  "name": "Vehicle Select Field",
+                  "width": 354,
+                  "height": 54,
+                  "fill": "$field-bg",
                   "cornerRadius": 8,
                   "stroke": "$line-soft",
                   "strokeWidth": 1,
                   "gap": 10,
                   "padding": [
                     0,
-                    14
+                    12
                   ],
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "icon",
-                      "id": "w5JfS4",
+                      "id": "BMQbR",
                       "name": "Vehicle Icon",
-                      "width": 21,
-                      "height": 21,
+                      "width": 18,
+                      "height": 18,
                       "icon": "car",
                       "library": "lucide",
-                      "fill": "$brand-green"
+                      "fill": "$text-secondary"
                     },
                     {
                       "type": "frame",
-                      "id": "HX4DP",
-                      "name": "Vehicle Text",
+                      "id": "N2xUv",
+                      "name": "Vehicle Field Text",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 1,
                       "children": [
                         {
                           "type": "text",
-                          "id": "BWskM",
+                          "id": "mxc4j",
                           "name": "Vehicle Label",
                           "fill": "$text-secondary",
                           "content": "Veículo",
@@ -183,48 +183,25 @@
                         },
                         {
                           "type": "text",
-                          "id": "yuIbY",
+                          "id": "f5Ue7",
                           "name": "Vehicle Value",
                           "fill": "$text-primary",
                           "content": "Meu veículo",
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
+                          "fontSize": 14,
                           "fontWeight": "700"
                         }
                       ]
                     },
                     {
                       "type": "icon",
-                      "id": "a12OKi",
-                      "name": "Vehicle Dropdown",
+                      "id": "BoZTX",
+                      "name": "Vehicle Chevron",
                       "width": 18,
                       "height": 18,
                       "icon": "chevron-down",
                       "library": "lucide",
                       "fill": "$text-secondary"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "Dhfd8",
-                  "name": "Add Vehicle Button",
-                  "width": 54,
-                  "height": 54,
-                  "fill": "$brand-green",
-                  "cornerRadius": 8,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "NitmJ",
-                      "name": "Add Vehicle Icon",
-                      "width": 24,
-                      "height": 24,
-                      "icon": "plus",
-                      "library": "lucide",
-                      "fill": "#FFFFFF"
                     }
                   ]
                 }
@@ -3720,42 +3697,42 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "luPsE",
-                  "name": "Selected Vehicle",
-                  "width": "fill_container",
-                  "height": "fill_container",
-                  "fill": "#141D1A",
+                  "id": "hyc6q",
+                  "name": "Vehicle Select Field",
+                  "width": 354,
+                  "height": 54,
+                  "fill": "#0F1715",
                   "cornerRadius": 8,
                   "stroke": "#294139",
                   "strokeWidth": 1,
                   "gap": 10,
                   "padding": [
                     0,
-                    14
+                    12
                   ],
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "icon",
-                      "id": "tBpC7",
+                      "id": "P5cuxO",
                       "name": "Vehicle Icon",
-                      "width": 21,
-                      "height": 21,
+                      "width": 18,
+                      "height": 18,
                       "icon": "car",
                       "library": "lucide",
-                      "fill": "#29A66A"
+                      "fill": "#7E9086"
                     },
                     {
                       "type": "frame",
-                      "id": "ePHfc",
-                      "name": "Vehicle Text",
+                      "id": "op41L",
+                      "name": "Vehicle Field Text",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 1,
                       "children": [
                         {
                           "type": "text",
-                          "id": "b5H1M",
+                          "id": "hpMQl",
                           "name": "Vehicle Label",
                           "fill": "#A8B6AD",
                           "content": "Veículo",
@@ -3765,48 +3742,25 @@
                         },
                         {
                           "type": "text",
-                          "id": "Spw5x",
+                          "id": "V2Vp9c",
                           "name": "Vehicle Value",
                           "fill": "#F4FBF6",
                           "content": "Meu veículo",
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
+                          "fontSize": 14,
                           "fontWeight": "700"
                         }
                       ]
                     },
                     {
                       "type": "icon",
-                      "id": "w58bi",
-                      "name": "Vehicle Dropdown",
+                      "id": "t3PKCX",
+                      "name": "Vehicle Chevron",
                       "width": 18,
                       "height": 18,
                       "icon": "chevron-down",
                       "library": "lucide",
                       "fill": "#7E9086"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "a1dTu",
-                  "name": "Add Vehicle Button",
-                  "width": 54,
-                  "height": 54,
-                  "fill": "#29A66A",
-                  "cornerRadius": 8,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "SWvft",
-                      "name": "Add Vehicle Icon",
-                      "width": 24,
-                      "height": 24,
-                      "icon": "plus",
-                      "library": "lucide",
-                      "fill": "#FFFFFF"
                     }
                   ]
                 }
