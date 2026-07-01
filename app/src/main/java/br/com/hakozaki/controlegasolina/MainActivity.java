@@ -665,13 +665,14 @@ public class MainActivity extends Activity {
             }
             for (int i = 0; i < vehicles.length(); i++) {
                 String label = vehicles.getString(i);
+                final int index = i;
                 LinearLayout card = simpleListCard(
                         R.drawable.ic_car,
                         label,
-                        i == editingVehicleIndex ? "Editando este veiculo." : "Toque para editar."
+                        i == editingVehicleIndex ? "Editando este veiculo." : "Use o lapis para editar.",
+                        v -> selectVehicleForEdit(index),
+                        v -> confirmRemoveVehicle(index)
                 );
-                final int index = i;
-                card.setOnClickListener(v -> selectVehicleForEdit(index));
                 vehiclesContainer.addView(card);
             }
         } catch (JSONException e) {
@@ -703,6 +704,47 @@ public class MainActivity extends Activity {
         }
     }
 
+    private void confirmRemoveVehicle(int index) {
+        try {
+            JSONArray vehicles = getArray(KEY_VEHICLES);
+            if (index < 0 || index >= vehicles.length()) {
+                return;
+            }
+            String label = vehicles.getString(index);
+            new AlertDialog.Builder(this)
+                    .setTitle("Remover veiculo")
+                    .setMessage("Deseja remover \"" + label + "\"?")
+                    .setNegativeButton("Cancelar", null)
+                    .setPositiveButton("Remover", (dialog, which) -> removeVehicle(index))
+                    .show();
+        } catch (JSONException e) {
+            toast("Nao foi possivel carregar o veiculo.");
+        }
+    }
+
+    private void removeVehicle(int index) {
+        try {
+            JSONArray vehicles = getArray(KEY_VEHICLES);
+            if (index < 0 || index >= vehicles.length()) {
+                return;
+            }
+            vehicles.remove(index);
+            putArray(KEY_VEHICLES, vehicles);
+            if (editingVehicleIndex == index) {
+                editingVehicleIndex = -1;
+                if (vehicleNameInput != null) vehicleNameInput.setText("");
+                if (vehiclePlateInput != null) vehiclePlateInput.setText("");
+            } else if (editingVehicleIndex > index) {
+                editingVehicleIndex--;
+            }
+            refreshVehicleList();
+            refreshVehicles();
+            toast("Veiculo removido.");
+        } catch (JSONException e) {
+            toast("Nao foi possivel remover o veiculo.");
+        }
+    }
+
     private void refreshStationList() {
         if (stationsContainer == null) {
             return;
@@ -721,9 +763,14 @@ public class MainActivity extends Activity {
                 if (i == editingStationIndex) {
                     subtitle = "Editando este posto.";
                 }
-                LinearLayout card = simpleListCard(R.drawable.ic_fuel, station.getString("name"), subtitle);
                 final int index = i;
-                card.setOnClickListener(v -> selectStationForEdit(index));
+                LinearLayout card = simpleListCard(
+                        R.drawable.ic_fuel,
+                        station.getString("name"),
+                        subtitle,
+                        v -> selectStationForEdit(index),
+                        v -> confirmRemoveStation(index)
+                );
                 stationsContainer.addView(card);
             }
         } catch (JSONException e) {
@@ -746,6 +793,46 @@ public class MainActivity extends Activity {
             toast("Dados do posto carregados.");
         } catch (JSONException e) {
             toast("Nao foi possivel carregar o posto.");
+        }
+    }
+
+    private void confirmRemoveStation(int index) {
+        try {
+            JSONArray stations = getArray(KEY_STATIONS);
+            if (index < 0 || index >= stations.length()) {
+                return;
+            }
+            String name = stations.getJSONObject(index).optString("name", "posto");
+            new AlertDialog.Builder(this)
+                    .setTitle("Remover posto")
+                    .setMessage("Deseja remover \"" + name + "\"?")
+                    .setNegativeButton("Cancelar", null)
+                    .setPositiveButton("Remover", (dialog, which) -> removeStation(index))
+                    .show();
+        } catch (JSONException e) {
+            toast("Nao foi possivel carregar o posto.");
+        }
+    }
+
+    private void removeStation(int index) {
+        try {
+            JSONArray stations = getArray(KEY_STATIONS);
+            if (index < 0 || index >= stations.length()) {
+                return;
+            }
+            stations.remove(index);
+            putArray(KEY_STATIONS, stations);
+            if (editingStationIndex == index) {
+                editingStationIndex = -1;
+                if (stationNameInput != null) stationNameInput.setText("");
+                if (stationNeighborhoodInput != null) stationNeighborhoodInput.setText("");
+            } else if (editingStationIndex > index) {
+                editingStationIndex--;
+            }
+            refreshStationList();
+            toast("Posto removido.");
+        } catch (JSONException e) {
+            toast("Nao foi possivel remover o posto.");
         }
     }
 
@@ -1134,7 +1221,13 @@ public class MainActivity extends Activity {
         return button;
     }
 
-    private LinearLayout simpleListCard(int iconRes, String titleText, String descriptionText) {
+    private LinearLayout simpleListCard(
+            int iconRes,
+            String titleText,
+            String descriptionText,
+            View.OnClickListener editListener,
+            View.OnClickListener removeListener
+    ) {
         LinearLayout card = new LinearLayout(this);
         card.setOrientation(LinearLayout.HORIZONTAL);
         card.setGravity(Gravity.CENTER_VERTICAL);
@@ -1170,7 +1263,30 @@ public class MainActivity extends Activity {
         description.setPadding(0, dp(3), 0, 0);
         copy.addView(description);
 
+        card.setOnClickListener(editListener);
+        card.addView(actionButton(R.drawable.ic_edit, appColor(R.color.field_background), appColor(R.color.border), appColor(R.color.text_secondary), "Editar", editListener),
+                new LinearLayout.LayoutParams(dp(36), dp(36)));
+        LinearLayout.LayoutParams removeParams = new LinearLayout.LayoutParams(dp(36), dp(36));
+        removeParams.setMargins(dp(8), 0, 0, 0);
+        card.addView(actionButton(R.drawable.ic_trash, dangerBackgroundColor(), dangerBorderColor(), dangerTextColor(), "Remover", removeListener), removeParams);
+
         return card;
+    }
+
+    private View actionButton(int iconRes, int backgroundColor, int borderColor, int tintColor, String description, View.OnClickListener listener) {
+        LinearLayout button = new LinearLayout(this);
+        button.setGravity(Gravity.CENTER);
+        button.setBackground(cardBackground(backgroundColor, dp(8), borderColor));
+        button.setContentDescription(description);
+        button.setClickable(true);
+        button.setFocusable(true);
+        button.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onClick(v);
+            }
+        });
+        button.addView(iconView(iconRes, tintColor, dp(17)), new LinearLayout.LayoutParams(dp(17), dp(17)));
+        return button;
     }
 
     private LinearLayout iconBox(int iconRes, int size, int backgroundColor, int tintColor) {
@@ -1180,6 +1296,18 @@ public class MainActivity extends Activity {
         box.addView(iconView(iconRes, tintColor, Math.max(dp(18), size - dp(16))),
                 new LinearLayout.LayoutParams(Math.max(dp(18), size - dp(16)), Math.max(dp(18), size - dp(16))));
         return box;
+    }
+
+    private int dangerBackgroundColor() {
+        return isDarkTheme() ? 0xFF241A1A : 0xFFFFF4F2;
+    }
+
+    private int dangerBorderColor() {
+        return isDarkTheme() ? 0xFF5A2A2A : 0xFFF1C8C1;
+    }
+
+    private int dangerTextColor() {
+        return isDarkTheme() ? 0xFFFF8A7A : 0xFFC24132;
     }
 
     private ImageView iconView(int iconRes, int tintColor, int size) {
