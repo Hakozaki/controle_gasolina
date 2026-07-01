@@ -1087,6 +1087,2458 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "ICWXD",
+      "x": 430,
+      "y": 0,
+      "name": "Histórico - Registros",
+      "clip": true,
+      "width": 390,
+      "fill": "$screen-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Ix4uA",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "$screen-bg",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "iaC8n",
+              "name": "Status Time",
+              "fill": "$text-primary",
+              "content": "09:41",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "w4mc5",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "FFHCc",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon",
+                  "id": "a7rvYj",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon",
+                  "id": "sRzyE",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U9lEQQ",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "$screen-bg",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "bw4bI",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "u8rW6",
+                  "name": "Screen Title",
+                  "fill": "$text-primary",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "vDrDG",
+                  "name": "Screen Subtitle",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Consulte os abastecimentos salvos e compare valor, litros e custo por litro.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ee1N3",
+              "name": "History Summary",
+              "width": "fill_container",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Z8cq0r",
+                  "name": "Total History Metric",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rEEFp",
+                      "name": "Total History Metric Top",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "g1MqX5",
+                          "name": "Total History Metric Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "list-checks",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uISR4",
+                          "name": "Total History Metric Label",
+                          "fill": "$text-secondary",
+                          "content": "Total",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "Jqm6e",
+                      "name": "Total History Metric Value",
+                      "fill": "$text-primary",
+                      "content": "4 registros",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kGwMr",
+                  "name": "Média History Metric",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CPTL0",
+                      "name": "Média History Metric Top",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "VW1OV",
+                          "name": "Média History Metric Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "trending-up",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        },
+                        {
+                          "type": "text",
+                          "id": "oErvY",
+                          "name": "Média History Metric Label",
+                          "fill": "$text-secondary",
+                          "content": "Média",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZjMiM",
+                      "name": "Média History Metric Value",
+                      "fill": "$text-primary",
+                      "content": "R$ 5,43/L",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "E4Af5f",
+              "name": "Refuel Records List",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "pKgH9",
+                  "name": "Meu veículo - Gasolina Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nrsxq",
+                      "name": "Meu veículo - Gasolina Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "k308bD",
+                          "name": "Meu veículo - Gasolina Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "byx9r",
+                      "name": "Meu veículo - Gasolina Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mj4fm",
+                          "name": "Meu veículo - Gasolina Title",
+                          "fill": "$text-primary",
+                          "content": "Meu veículo - Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "OHiAV",
+                          "name": "Meu veículo - Gasolina Meta",
+                          "fill": "$text-secondary",
+                          "content": "Hoje, 09:30 · Km 12.480",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "O71goc",
+                          "name": "Meu veículo - Gasolina Detail",
+                          "fill": "$text-secondary",
+                          "content": "Posto Central · 34,2 L · R$ 205,00 · R$ 5,99/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NEKGU",
+                      "name": "Meu veículo - Gasolina Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "gsiOq",
+                          "name": "Meu veículo - Gasolina Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "u8AaAl",
+                  "name": "Meu veículo - Etanol Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "HbwZz",
+                      "name": "Meu veículo - Etanol Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "W0BcWH",
+                          "name": "Meu veículo - Etanol Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "DnMUc",
+                      "name": "Meu veículo - Etanol Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PemWL",
+                          "name": "Meu veículo - Etanol Title",
+                          "fill": "$text-primary",
+                          "content": "Meu veículo - Etanol",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "erOcY",
+                          "name": "Meu veículo - Etanol Meta",
+                          "fill": "$text-secondary",
+                          "content": "26 jun, 18:12 · Km 12.120",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "qXR7C",
+                          "name": "Meu veículo - Etanol Detail",
+                          "fill": "$text-secondary",
+                          "content": "Posto Avenida · 28,0 L · R$ 122,00 · R$ 4,36/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "oJr5q",
+                      "name": "Meu veículo - Etanol Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "fvxKS",
+                          "name": "Meu veículo - Etanol Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "z1c20",
+                  "name": "Moto CG - Gasolina Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CbLBa",
+                      "name": "Moto CG - Gasolina Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "S4QrX",
+                          "name": "Moto CG - Gasolina Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dg7lR",
+                      "name": "Moto CG - Gasolina Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "emDxS",
+                          "name": "Moto CG - Gasolina Title",
+                          "fill": "$text-primary",
+                          "content": "Moto CG - Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "lmzyU",
+                          "name": "Moto CG - Gasolina Meta",
+                          "fill": "$text-secondary",
+                          "content": "22 jun, 07:45 · Km 31.840",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "dmLuI",
+                          "name": "Moto CG - Gasolina Detail",
+                          "fill": "$text-secondary",
+                          "content": "Posto Norte · 12,7 L · R$ 76,00 · R$ 5,98/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "DKyDa",
+                      "name": "Moto CG - Gasolina Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "h15XNT",
+                          "name": "Moto CG - Gasolina Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "J0k4a0",
+                  "name": "Meu veículo - Diesel Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "g7qXR",
+                      "name": "Meu veículo - Diesel Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "D4Leo",
+                          "name": "Meu veículo - Diesel Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qk0Mv",
+                      "name": "Meu veículo - Diesel Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TWo6T",
+                          "name": "Meu veículo - Diesel Title",
+                          "fill": "$text-primary",
+                          "content": "Meu veículo - Diesel",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "T2PVT",
+                          "name": "Meu veículo - Diesel Meta",
+                          "fill": "$text-secondary",
+                          "content": "18 jun, 17:20 · Km 11.820",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VemxW",
+                          "name": "Meu veículo - Diesel Detail",
+                          "fill": "$text-secondary",
+                          "content": "Auto Posto BR · 40,0 L · R$ 232,00 · R$ 5,80/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EDgwT",
+                      "name": "Meu veículo - Diesel Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "M2HW2",
+                          "name": "Meu veículo - Diesel Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "k0uCcd",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "$screen-bg",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "BjraX",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "l6jBCr",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "B8hEl",
+                  "name": "Registro Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Registro",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Vd2no",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#E9F3EC",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Q1KU9",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "$brand-green"
+                },
+                {
+                  "type": "text",
+                  "id": "fptR6",
+                  "name": "Histórico Tab Label",
+                  "fill": "$brand-green",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "C6dNtp",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "kZBKP",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "xkX41",
+                  "name": "Veículos Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "I2z57b",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Aedcf",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "VxNcV",
+                  "name": "Postos Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ogQbl",
+      "x": 860,
+      "y": 0,
+      "name": "Veículos - Cadastro",
+      "clip": true,
+      "width": 390,
+      "fill": "$screen-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "l7iYt",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "$screen-bg",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "C0XviE",
+              "name": "Status Time",
+              "fill": "$text-primary",
+              "content": "09:41",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "f8q6E",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "PWaMw",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon",
+                  "id": "jTmh0",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon",
+                  "id": "m5Fmk5",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wFUva",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "$screen-bg",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "H2KeW",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VbGtT",
+                  "name": "Screen Title",
+                  "fill": "$text-primary",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "MuDPc",
+                  "name": "Screen Subtitle",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Cadastre os veículos usados nos abastecimentos e edite os dados quando precisar.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xnBQC",
+              "name": "Vehicle Form",
+              "width": "fill_container",
+              "fill": "$card-bg",
+              "cornerRadius": 8,
+              "stroke": "$line-soft",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wDrVk",
+                  "name": "Vehicle Form Title",
+                  "fill": "$text-primary",
+                  "content": "Novo veículo",
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "en91G",
+                  "name": "Nome ou placa Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "$field-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "hImaj",
+                      "name": "Nome ou placa Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "car",
+                      "library": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "j1HyYo",
+                      "name": "Nome ou placa Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xrcMx",
+                          "name": "Nome ou placa Label",
+                          "fill": "$text-secondary",
+                          "content": "Nome ou placa",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uUEd7",
+                          "name": "Nome ou placa Value",
+                          "fill": "$text-primary",
+                          "content": "Meu veículo",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "omawT",
+                  "name": "Observação Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "$field-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "O6JSJ",
+                      "name": "Observação Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "file-text",
+                      "library": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "V0e1JR",
+                      "name": "Observação Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PjkK6",
+                          "name": "Observação Label",
+                          "fill": "$text-secondary",
+                          "content": "Observação",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Uhl1t",
+                          "name": "Observação Value",
+                          "fill": "$text-primary",
+                          "content": "Uso principal",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fSKwP",
+                  "name": "Salvar veículo Button",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "$brand-green",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "XJDJd",
+                      "name": "Salvar veículo Icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "check",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uvBI5",
+                      "name": "Salvar veículo Label",
+                      "fill": "#FFFFFF",
+                      "content": "Salvar veículo",
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zp4co",
+              "name": "Vehicles List",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vVMs2",
+                  "name": "Vehicles List Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "X3kFt",
+                      "name": "Vehicles List Title",
+                      "fill": "$text-primary",
+                      "content": "Veículos cadastrados",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "j2tblg",
+                      "name": "Vehicles Count",
+                      "fill": "$brand-green",
+                      "content": "3 veículos",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "FR7Dv",
+                  "name": "Meu veículo Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "YqBmU",
+                      "name": "Meu veículo Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "j7Ie5",
+                          "name": "Meu veículo Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "car",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "P2QDA",
+                      "name": "Meu veículo Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FOnDv",
+                          "name": "Meu veículo Title",
+                          "fill": "$text-primary",
+                          "content": "Meu veículo",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "DcwWS",
+                          "name": "Meu veículo Meta",
+                          "fill": "$text-secondary",
+                          "content": "Último abastecimento hoje",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "C2Hee",
+                          "name": "Meu veículo Detail",
+                          "fill": "$text-secondary",
+                          "content": "Km 12.480 · Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "m5MUf",
+                      "name": "Meu veículo Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "r3n5e",
+                          "name": "Meu veículo Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "II8QI",
+                  "name": "Moto CG Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "i7QYa",
+                      "name": "Moto CG Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "r44aY",
+                          "name": "Moto CG Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "car",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "u08ydh",
+                      "name": "Moto CG Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e1b75",
+                          "name": "Moto CG Title",
+                          "fill": "$text-primary",
+                          "content": "Moto CG",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "TDQwm",
+                          "name": "Moto CG Meta",
+                          "fill": "$text-secondary",
+                          "content": "Último abastecimento 22 jun",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "t4xrkc",
+                          "name": "Moto CG Detail",
+                          "fill": "$text-secondary",
+                          "content": "Km 31.840 · Gasolina",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "llRT2",
+                      "name": "Moto CG Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "O8CVRs",
+                          "name": "Moto CG Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fLn0F",
+                  "name": "Caminhonete Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lAyjr",
+                      "name": "Caminhonete Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "d700jP",
+                          "name": "Caminhonete Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "car",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PyMB4",
+                      "name": "Caminhonete Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "I8sUO",
+                          "name": "Caminhonete Title",
+                          "fill": "$text-primary",
+                          "content": "Caminhonete",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GIyDQ",
+                          "name": "Caminhonete Meta",
+                          "fill": "$text-secondary",
+                          "content": "Sem abastecimento recente",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "I8yuM3",
+                          "name": "Caminhonete Detail",
+                          "fill": "$text-secondary",
+                          "content": "Diesel",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "E5k9E",
+                      "name": "Caminhonete Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "yY5NU",
+                          "name": "Caminhonete Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vWJgW",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "$screen-bg",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "X4XzC",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "riCSk",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "TANoK",
+                  "name": "Registro Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Registro",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sqG2s",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "KZGu7",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "SCGaA",
+                  "name": "Histórico Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KW4gX",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#E9F3EC",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "aIGYx",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "$brand-green"
+                },
+                {
+                  "type": "text",
+                  "id": "h9HtQ",
+                  "name": "Veículos Tab Label",
+                  "fill": "$brand-green",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fUg3M",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "r1ugQI",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "KSHyq",
+                  "name": "Postos Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "k2xQm",
+      "x": 1290,
+      "y": 0,
+      "name": "Postos - Cadastro",
+      "clip": true,
+      "width": 390,
+      "fill": "$screen-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ehEWh",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "fill": "$screen-bg",
+          "padding": [
+            18,
+            22,
+            0,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "SBX3C",
+              "name": "Status Time",
+              "fill": "$text-primary",
+              "content": "09:41",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "k6MpP9",
+              "name": "Status Icons",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "CtCHQ",
+                  "name": "Status signal",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon",
+                  "id": "F2w1Zm",
+                  "name": "Status wifi",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                },
+                {
+                  "type": "icon",
+                  "id": "SUUaB",
+                  "name": "Status battery-full",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "fill": "$text-primary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pRmki",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "fill": "$screen-bg",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            18,
+            18,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "D285B",
+              "name": "Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Z5XCnf",
+                  "name": "Screen Title",
+                  "fill": "$text-primary",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "nw6sv",
+                  "name": "Screen Subtitle",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Mantenha uma lista de postos para agilizar o cadastro dos abastecimentos.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MY6yl",
+              "name": "Station Form",
+              "width": "fill_container",
+              "fill": "$card-bg",
+              "cornerRadius": 8,
+              "stroke": "$line-soft",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "O9iMA",
+                  "name": "Station Form Title",
+                  "fill": "$text-primary",
+                  "content": "Novo posto",
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "frame",
+                  "id": "vU72U",
+                  "name": "Nome do posto Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "$field-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "AVzvk",
+                      "name": "Nome do posto Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "fuel",
+                      "library": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MBSqg",
+                      "name": "Nome do posto Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lfAPD",
+                          "name": "Nome do posto Label",
+                          "fill": "$text-secondary",
+                          "content": "Nome do posto",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WA4Un",
+                          "name": "Nome do posto Value",
+                          "fill": "$text-primary",
+                          "content": "Posto Central",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "j8UH6",
+                  "name": "Endereço Field",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "$field-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "VVsrt",
+                      "name": "Endereço Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "map-pin",
+                      "library": "lucide",
+                      "fill": "$text-secondary"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Plf6S",
+                      "name": "Endereço Field Text",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TnZuw",
+                          "name": "Endereço Label",
+                          "fill": "$text-secondary",
+                          "content": "Endereço",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Dt2wj",
+                          "name": "Endereço Value",
+                          "fill": "$text-primary",
+                          "content": "Av. Brasil, 1200",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Sm36N",
+                  "name": "Salvar posto Button",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "$brand-green",
+                  "cornerRadius": 8,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "SWy69",
+                      "name": "Salvar posto Icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "check",
+                      "library": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VRdoV",
+                      "name": "Salvar posto Label",
+                      "fill": "#FFFFFF",
+                      "content": "Salvar posto",
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "J6yyMi",
+              "name": "Stations List",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "hSA0Q",
+                  "name": "Stations List Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "V8UE2B",
+                      "name": "Stations List Title",
+                      "fill": "$text-primary",
+                      "content": "Postos cadastrados",
+                      "fontFamily": "$font-body",
+                      "fontSize": 19,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "LauwO",
+                      "name": "Stations Count",
+                      "fill": "$brand-green",
+                      "content": "3 postos",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d6xMUL",
+                  "name": "Posto Central Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "WkY4p",
+                      "name": "Posto Central Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "p4cN8T",
+                          "name": "Posto Central Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e0K16C",
+                      "name": "Posto Central Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ph3v3",
+                          "name": "Posto Central Title",
+                          "fill": "$text-primary",
+                          "content": "Posto Central",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "SpAqn",
+                          "name": "Posto Central Meta",
+                          "fill": "$text-secondary",
+                          "content": "Av. Brasil, 1200",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LvQn0",
+                          "name": "Posto Central Detail",
+                          "fill": "$text-secondary",
+                          "content": "Último preço: R$ 5,99/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "J6AQ1p",
+                      "name": "Posto Central Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "AfL2y",
+                          "name": "Posto Central Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "w58ol8",
+                  "name": "Posto Avenida Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zXZxk",
+                      "name": "Posto Avenida Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "VPQmR",
+                          "name": "Posto Avenida Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jfGSF",
+                      "name": "Posto Avenida Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lZTwx",
+                          "name": "Posto Avenida Title",
+                          "fill": "$text-primary",
+                          "content": "Posto Avenida",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "H0JTu",
+                          "name": "Posto Avenida Meta",
+                          "fill": "$text-secondary",
+                          "content": "Av. Principal, 455",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FMywv",
+                          "name": "Posto Avenida Detail",
+                          "fill": "$text-secondary",
+                          "content": "Último preço: R$ 4,36/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wVQYP",
+                      "name": "Posto Avenida Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "IeP04",
+                          "name": "Posto Avenida Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Rp6pC",
+                  "name": "Auto Posto BR Row",
+                  "width": "fill_container",
+                  "fill": "$card-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$line-soft",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "pke8M",
+                      "name": "Auto Posto BR Icon Container",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#E9F3EC",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ufmfC",
+                          "name": "Auto Posto BR Icon",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "fuel",
+                          "library": "lucide",
+                          "fill": "$brand-green"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "i0M7kC",
+                      "name": "Auto Posto BR Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xoHa7",
+                          "name": "Auto Posto BR Title",
+                          "fill": "$text-primary",
+                          "content": "Auto Posto BR",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "text",
+                          "id": "mjfoR",
+                          "name": "Auto Posto BR Meta",
+                          "fill": "$text-secondary",
+                          "content": "BR-364, km 18",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "V8uCm",
+                          "name": "Auto Posto BR Detail",
+                          "fill": "$text-secondary",
+                          "content": "Último preço: R$ 5,80/L",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pzuRe",
+                      "name": "Auto Posto BR Edit Button",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "$field-bg",
+                      "cornerRadius": 8,
+                      "stroke": "$line-soft",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "cs6ti",
+                          "name": "Auto Posto BR Edit Icon",
+                          "width": 17,
+                          "height": 17,
+                          "icon": "pencil",
+                          "library": "lucide",
+                          "fill": "$text-secondary"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cBfjP",
+          "name": "Bottom Tab Bar",
+          "width": "fill_container",
+          "height": 76,
+          "fill": "$screen-bg",
+          "gap": 6,
+          "padding": [
+            10,
+            16,
+            14,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "prna2",
+              "name": "Registro Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "SpHKa",
+                  "name": "Registro Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "clipboard-plus",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "G0Z33g",
+                  "name": "Registro Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Registro",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sqjQD",
+              "name": "Histórico Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "hc5qN",
+                  "name": "Histórico Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "list",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "Ed1V7",
+                  "name": "Histórico Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Histórico",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dohS0",
+              "name": "Veículos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#00000000",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "XkZVz",
+                  "name": "Veículos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "car",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "N4b64B",
+                  "name": "Veículos Tab Label",
+                  "fill": "$text-secondary",
+                  "content": "Veículos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "W9oRGX",
+              "name": "Postos Tab",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#E9F3EC",
+              "cornerRadius": 26,
+              "layout": "vertical",
+              "gap": 2,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "zziHl",
+                  "name": "Postos Tab Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "fuel",
+                  "library": "lucide",
+                  "fill": "$brand-green"
+                },
+                {
+                  "type": "text",
+                  "id": "z4lafe",
+                  "name": "Postos Tab Label",
+                  "fill": "$brand-green",
+                  "content": "Postos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "800"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
