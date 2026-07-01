@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -40,9 +41,13 @@ import java.util.Locale;
 public class MainActivity extends Activity {
     private static final String PREFS = "controle_gasolina";
     private static final String KEY_VEHICLES = "vehicles";
+    private static final String KEY_STATIONS = "stations";
     private static final String KEY_REFUELS = "refuels";
     private static final String KEY_DARK_THEME = "dark_theme";
     private static final int PAGE_REGISTER = 0;
+    private static final int PAGE_HISTORY = 1;
+    private static final int PAGE_VEHICLES = 2;
+    private static final int PAGE_STATIONS = 3;
     private static final int PAGE_SETTINGS = 4;
     private static final int LOCATION_PERMISSION_REQUEST = 42;
 
@@ -61,6 +66,12 @@ public class MainActivity extends Activity {
     private TextView totalSummaryText;
     private TextView historyCountText;
     private LinearLayout historyContainer;
+    private EditText vehicleNameInput;
+    private EditText vehiclePlateInput;
+    private LinearLayout vehiclesContainer;
+    private EditText stationNameInput;
+    private EditText stationNeighborhoodInput;
+    private LinearLayout stationsContainer;
     private Location lastLocation;
     private int currentPage = PAGE_REGISTER;
 
@@ -69,18 +80,26 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
         ensureDefaultVehicle();
+        ensureDefaultStation();
         setBarsForTheme();
         setContentView(buildContent());
-        refreshVehicles();
-        refreshHistory();
-        requestLocationIfPossible();
+        refreshCurrentPage();
     }
 
     private View buildContent() {
-        if (currentPage == PAGE_SETTINGS) {
-            return buildSettingsContent();
+        switch (currentPage) {
+            case PAGE_HISTORY:
+                return buildHistoryContent();
+            case PAGE_VEHICLES:
+                return buildVehiclesContent();
+            case PAGE_STATIONS:
+                return buildStationsContent();
+            case PAGE_SETTINGS:
+                return buildSettingsContent();
+            case PAGE_REGISTER:
+            default:
+                return buildRegisterContent();
         }
-        return buildRegisterContent();
     }
 
     private View buildRegisterContent() {
@@ -116,26 +135,10 @@ public class MainActivity extends Activity {
         subtitle.setPadding(0, dp(4), 0, dp(16));
         root.addView(subtitle);
 
-        LinearLayout vehicleRow = new LinearLayout(this);
-        vehicleRow.setOrientation(LinearLayout.HORIZONTAL);
-        vehicleRow.setGravity(Gravity.CENTER_VERTICAL);
-        root.addView(vehicleRow);
-
         vehicleSpinner = new Spinner(this);
         vehicleSpinner.setBackground(cardBackground(appColor(R.color.card_background), dp(8), appColor(R.color.border)));
         vehicleSpinner.setPadding(dp(8), 0, dp(8), 0);
-        vehicleRow.addView(vehicleSpinner, new LinearLayout.LayoutParams(0, dp(54), 1));
-
-        Button addVehicleButton = new Button(this);
-        addVehicleButton.setText("+");
-        addVehicleButton.setTextSize(22);
-        addVehicleButton.setTextColor(color(android.R.color.white));
-        addVehicleButton.setTypeface(Typeface.DEFAULT_BOLD);
-        addVehicleButton.setBackground(cardBackground(appColor(R.color.brand_green), dp(8), appColor(R.color.brand_green)));
-        addVehicleButton.setOnClickListener(v -> showAddVehicleDialog());
-        LinearLayout.LayoutParams addVehicleParams = new LinearLayout.LayoutParams(dp(54), dp(54));
-        addVehicleParams.setMargins(dp(10), 0, 0, 0);
-        vehicleRow.addView(addVehicleButton, addVehicleParams);
+        root.addView(vehicleSpinner, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(54)));
 
         LinearLayout summaryRow = new LinearLayout(this);
         summaryRow.setOrientation(LinearLayout.HORIZONTAL);
@@ -148,8 +151,8 @@ public class MainActivity extends Activity {
 
         litersSummaryText = new TextView(this);
         totalSummaryText = new TextView(this);
-        summaryRow.addView(summaryCard("Litros", "34,2 L", litersSummaryText), weightedCardParams(0));
-        summaryRow.addView(summaryCard("Total", "R$ 205,00", totalSummaryText), weightedCardParams(dp(10)));
+        summaryRow.addView(summaryCard(R.drawable.ic_liters, "Litros", "34,2 L", litersSummaryText), weightedCardParams(0));
+        summaryRow.addView(summaryCard(R.drawable.ic_money, "Total", "R$ 205,00", totalSummaryText), weightedCardParams(dp(10)));
 
         LinearLayout form = section();
         root.addView(form);
@@ -183,16 +186,16 @@ public class MainActivity extends Activity {
         form.addView(valueRow);
 
         litersInput = input("34,2", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        valueRow.addView(inputBlock("Litros", litersInput), weightedCardParams(0));
+        valueRow.addView(inputBlock(R.drawable.ic_liters, "Litros", litersInput), weightedCardParams(0));
 
         totalValueInput = input("R$ 205,00", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        valueRow.addView(inputBlock("Valor", totalValueInput), weightedCardParams(dp(8)));
+        valueRow.addView(inputBlock(R.drawable.ic_money, "Valor total", totalValueInput), weightedCardParams(dp(8)));
 
         kmInput = input("Quilometragem atual (opcional)", InputType.TYPE_CLASS_NUMBER);
-        form.addView(spacedField("Quilometragem", kmInput));
+        form.addView(spacedField(R.drawable.ic_gauge, "Quilometragem", kmInput));
 
         stationInput = input("Posto de combustivel", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-        form.addView(spacedField("Posto", stationInput));
+        form.addView(spacedField(R.drawable.ic_location, "Posto", stationInput));
 
         locationText = new TextView(this);
         locationText.setText("GPS: aguardando permissao");
@@ -245,6 +248,133 @@ public class MainActivity extends Activity {
         return screen;
     }
 
+    private View buildHistoryContent() {
+        LinearLayout screen = pageShell();
+        ScrollView scrollView = scrollArea(screen);
+        LinearLayout root = pageRoot(scrollView);
+
+        addPageHeader(root, "Historico", "Consulte abastecimentos, custos e consumo registrados.");
+
+        LinearLayout summaryRow = new LinearLayout(this);
+        summaryRow.setOrientation(LinearLayout.HORIZONTAL);
+        LinearLayout.LayoutParams summaryRowParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        summaryRowParams.setMargins(0, 0, 0, dp(16));
+        root.addView(summaryRow, summaryRowParams);
+
+        litersSummaryText = new TextView(this);
+        totalSummaryText = new TextView(this);
+        summaryRow.addView(summaryCard(R.drawable.ic_liters, "Litros", "0,0 L", litersSummaryText), weightedCardParams(0));
+        summaryRow.addView(summaryCard(R.drawable.ic_money, "Total", "R$ 0,00", totalSummaryText), weightedCardParams(dp(10)));
+
+        LinearLayout historyHeader = new LinearLayout(this);
+        historyHeader.setGravity(Gravity.CENTER_VERTICAL);
+        root.addView(historyHeader);
+
+        historyHeader.addView(sectionTitle("Registros recentes"), new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+
+        historyCountText = new TextView(this);
+        historyCountText.setText("0 registros");
+        historyCountText.setTextColor(appColor(R.color.brand_green));
+        historyCountText.setTextSize(12);
+        historyCountText.setTypeface(Typeface.DEFAULT_BOLD);
+        historyHeader.addView(historyCountText);
+
+        historyContainer = new LinearLayout(this);
+        historyContainer.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams historyParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        historyParams.setMargins(0, dp(10), 0, 0);
+        root.addView(historyContainer, historyParams);
+
+        View bottomNav = bottomNavigation();
+        screen.addView(bottomNav, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(76)));
+        applySystemBarSpacing(screen, bottomNav);
+        return screen;
+    }
+
+    private View buildVehiclesContent() {
+        LinearLayout screen = pageShell();
+        ScrollView scrollView = scrollArea(screen);
+        LinearLayout root = pageRoot(scrollView);
+
+        addPageHeader(root, "Veiculos", "Cadastre seus veiculos para separar os abastecimentos.");
+
+        LinearLayout form = section();
+        root.addView(form);
+        form.addView(sectionTitle("Novo veiculo"));
+
+        vehicleNameInput = input("Meu veiculo", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+        form.addView(spacedField(R.drawable.ic_car, "Nome do veiculo", vehicleNameInput));
+
+        vehiclePlateInput = input("ABC-1D23", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+        form.addView(spacedField(R.drawable.ic_tag, "Placa", vehiclePlateInput));
+
+        Button saveVehicle = primaryButton("Cadastrar veiculo", R.drawable.ic_plus);
+        saveVehicle.setOnClickListener(v -> addVehicleFromPage());
+        LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(52));
+        buttonParams.setMargins(0, dp(10), 0, 0);
+        form.addView(saveVehicle, buttonParams);
+
+        LinearLayout listHeader = new LinearLayout(this);
+        listHeader.setGravity(Gravity.CENTER_VERTICAL);
+        listHeader.setPadding(0, dp(18), 0, dp(10));
+        root.addView(listHeader);
+        listHeader.addView(sectionTitle("Veiculos cadastrados"), new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+
+        vehiclesContainer = new LinearLayout(this);
+        vehiclesContainer.setOrientation(LinearLayout.VERTICAL);
+        root.addView(vehiclesContainer);
+
+        View bottomNav = bottomNavigation();
+        screen.addView(bottomNav, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(76)));
+        applySystemBarSpacing(screen, bottomNav);
+        return screen;
+    }
+
+    private View buildStationsContent() {
+        LinearLayout screen = pageShell();
+        ScrollView scrollView = scrollArea(screen);
+        LinearLayout root = pageRoot(scrollView);
+
+        addPageHeader(root, "Postos", "Organize os postos usados nos seus abastecimentos.");
+
+        LinearLayout form = section();
+        root.addView(form);
+        form.addView(sectionTitle("Novo posto"));
+
+        stationNameInput = input("Posto Central", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+        form.addView(spacedField(R.drawable.ic_fuel, "Nome do posto", stationNameInput));
+
+        stationNeighborhoodInput = input("Centro", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+        form.addView(spacedField(R.drawable.ic_location, "Bairro", stationNeighborhoodInput));
+
+        Button saveStation = primaryButton("Cadastrar posto", R.drawable.ic_plus);
+        saveStation.setOnClickListener(v -> addStationFromPage());
+        LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(52));
+        buttonParams.setMargins(0, dp(10), 0, 0);
+        form.addView(saveStation, buttonParams);
+
+        LinearLayout listHeader = new LinearLayout(this);
+        listHeader.setGravity(Gravity.CENTER_VERTICAL);
+        listHeader.setPadding(0, dp(18), 0, dp(10));
+        root.addView(listHeader);
+        listHeader.addView(sectionTitle("Postos cadastrados"), new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+
+        stationsContainer = new LinearLayout(this);
+        stationsContainer.setOrientation(LinearLayout.VERTICAL);
+        root.addView(stationsContainer);
+
+        View bottomNav = bottomNavigation();
+        screen.addView(bottomNav, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(76)));
+        applySystemBarSpacing(screen, bottomNav);
+        return screen;
+    }
+
     private View buildSettingsContent() {
         LinearLayout screen = new LinearLayout(this);
         screen.setOrientation(LinearLayout.VERTICAL);
@@ -281,7 +411,7 @@ public class MainActivity extends Activity {
         LinearLayout appearance = section();
         root.addView(appearance);
         appearance.addView(sectionTitle("Aparencia"));
-        appearance.addView(settingsRow("*", "Tema escuro", "Ative para usar fundo escuro e economia visual a noite.", true));
+        appearance.addView(settingsRow(R.drawable.ic_settings, "Tema escuro", "Ative para usar fundo escuro e economia visual a noite.", true));
 
         LinearLayout appSection = section();
         LinearLayout.LayoutParams appParams = new LinearLayout.LayoutParams(
@@ -292,11 +422,11 @@ public class MainActivity extends Activity {
         appSection.setLayoutParams(appParams);
         root.addView(appSection);
         appSection.addView(sectionTitle("Aplicativo"));
-        appSection.addView(settingsRow("!", "Lembretes", "Alertas de abastecimento em breve.", false));
-        appSection.addView(settingsRow("o", "Dados locais", "Registros salvos somente neste aparelho.", false));
+        appSection.addView(settingsRow(R.drawable.ic_clock, "Lembretes", "Alertas de abastecimento em breve.", false));
+        appSection.addView(settingsRow(R.drawable.ic_location, "Dados locais", "Registros salvos somente neste aparelho.", false));
 
         TextView version = new TextView(this);
-        version.setText("i  Controle Gasolina - versao 1.0");
+        version.setText("Controle Gasolina - versao 1.0");
         version.setTextColor(appColor(R.color.text_secondary));
         version.setTextSize(12);
         version.setGravity(Gravity.CENTER_VERTICAL);
@@ -352,6 +482,49 @@ public class MainActivity extends Activity {
             vehicleSpinner.setSelection(vehicles.length() - 1);
         } catch (JSONException e) {
             toast("Nao foi possivel cadastrar o veiculo.");
+        }
+    }
+
+    private void addVehicleFromPage() {
+        String name = vehicleNameInput == null ? "" : vehicleNameInput.getText().toString().trim();
+        String plate = vehiclePlateInput == null ? "" : vehiclePlateInput.getText().toString().trim();
+        String label = plate.isEmpty() ? name : name + " - " + plate;
+        addVehicle(label);
+        if (vehicleNameInput != null) vehicleNameInput.setText("");
+        if (vehiclePlateInput != null) vehiclePlateInput.setText("");
+        refreshVehicleList();
+    }
+
+    private void addStationFromPage() {
+        String name = stationNameInput == null ? "" : stationNameInput.getText().toString().trim();
+        String neighborhood = stationNeighborhoodInput == null ? "" : stationNeighborhoodInput.getText().toString().trim();
+        if (name.isEmpty()) {
+            toast("Informe o nome do posto.");
+            return;
+        }
+
+        try {
+            JSONArray stations = getArray(KEY_STATIONS);
+            for (int i = 0; i < stations.length(); i++) {
+                JSONObject station = stations.getJSONObject(i);
+                if (name.equalsIgnoreCase(station.getString("name"))) {
+                    toast("Esse posto ja esta cadastrado.");
+                    return;
+                }
+            }
+
+            JSONObject station = new JSONObject();
+            station.put("name", name);
+            station.put("neighborhood", neighborhood);
+            stations.put(station);
+            putArray(KEY_STATIONS, stations);
+
+            stationNameInput.setText("");
+            stationNeighborhoodInput.setText("");
+            refreshStationList();
+            toast("Posto cadastrado.");
+        } catch (JSONException e) {
+            toast("Nao foi possivel cadastrar o posto.");
         }
     }
 
@@ -416,7 +589,24 @@ public class MainActivity extends Activity {
         totalValueInput.setText("");
     }
 
+    private void refreshCurrentPage() {
+        if (currentPage == PAGE_REGISTER) {
+            refreshVehicles();
+            refreshHistory();
+            requestLocationIfPossible();
+        } else if (currentPage == PAGE_HISTORY) {
+            refreshHistory();
+        } else if (currentPage == PAGE_VEHICLES) {
+            refreshVehicleList();
+        } else if (currentPage == PAGE_STATIONS) {
+            refreshStationList();
+        }
+    }
+
     private void refreshVehicles() {
+        if (vehicleSpinner == null) {
+            return;
+        }
         try {
             JSONArray vehicles = getArray(KEY_VEHICLES);
             List<String> names = new ArrayList<>();
@@ -427,6 +617,48 @@ public class MainActivity extends Activity {
             vehicleSpinner.setAdapter(adapter);
         } catch (JSONException e) {
             toast("Erro ao carregar veiculos.");
+        }
+    }
+
+    private void refreshVehicleList() {
+        if (vehiclesContainer == null) {
+            return;
+        }
+        vehiclesContainer.removeAllViews();
+        try {
+            JSONArray vehicles = getArray(KEY_VEHICLES);
+            if (vehicles.length() == 0) {
+                vehiclesContainer.addView(emptyText("Nenhum veiculo cadastrado ainda."));
+                return;
+            }
+            for (int i = 0; i < vehicles.length(); i++) {
+                String label = vehicles.getString(i);
+                vehiclesContainer.addView(simpleListCard(R.drawable.ic_car, label, "Pronto para registrar abastecimentos."));
+            }
+        } catch (JSONException e) {
+            toast("Erro ao carregar veiculos.");
+        }
+    }
+
+    private void refreshStationList() {
+        if (stationsContainer == null) {
+            return;
+        }
+        stationsContainer.removeAllViews();
+        try {
+            JSONArray stations = getArray(KEY_STATIONS);
+            if (stations.length() == 0) {
+                stationsContainer.addView(emptyText("Nenhum posto cadastrado ainda."));
+                return;
+            }
+            for (int i = 0; i < stations.length(); i++) {
+                JSONObject station = stations.getJSONObject(i);
+                String neighborhood = station.optString("neighborhood", "");
+                String subtitle = neighborhood.isEmpty() ? "Bairro nao informado." : neighborhood;
+                stationsContainer.addView(simpleListCard(R.drawable.ic_fuel, station.getString("name"), subtitle));
+            }
+        } catch (JSONException e) {
+            toast("Erro ao carregar postos.");
         }
     }
 
@@ -469,13 +701,8 @@ public class MainActivity extends Activity {
         params.setMargins(0, 0, 0, dp(10));
         card.setLayoutParams(params);
 
-        TextView icon = new TextView(this);
-        icon.setText("B");
-        icon.setTextColor(appColor(R.color.brand_green));
-        icon.setGravity(Gravity.CENTER);
-        icon.setTypeface(Typeface.DEFAULT_BOLD);
-        icon.setBackground(cardBackground(appColor(R.color.brand_green_soft), dp(8), appColor(R.color.brand_green_soft)));
-        card.addView(icon, new LinearLayout.LayoutParams(dp(34), dp(34)));
+        card.addView(iconBox(R.drawable.ic_fuel, dp(34), appColor(R.color.brand_green_soft), appColor(R.color.brand_green)),
+                new LinearLayout.LayoutParams(dp(34), dp(34)));
 
         LinearLayout content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
@@ -613,6 +840,21 @@ public class MainActivity extends Activity {
         }
     }
 
+    private void ensureDefaultStation() {
+        if (!prefs.contains(KEY_STATIONS)) {
+            JSONArray stations = new JSONArray();
+            JSONObject station = new JSONObject();
+            try {
+                station.put("name", "Posto Central");
+                station.put("neighborhood", "Centro");
+                stations.put(station);
+                putArray(KEY_STATIONS, stations);
+            } catch (JSONException ignored) {
+                putArray(KEY_STATIONS, new JSONArray());
+            }
+        }
+    }
+
     private JSONArray getArray(String key) throws JSONException {
         return new JSONArray(prefs.getString(key, "[]"));
     }
@@ -633,6 +875,49 @@ public class MainActivity extends Activity {
         input.setPadding(dp(12), 0, dp(12), 0);
         input.setLayoutParams(fieldParams());
         return input;
+    }
+
+    private LinearLayout pageShell() {
+        LinearLayout screen = new LinearLayout(this);
+        screen.setOrientation(LinearLayout.VERTICAL);
+        screen.setBackgroundColor(appColor(R.color.screen_background));
+        return screen;
+    }
+
+    private ScrollView scrollArea(LinearLayout screen) {
+        ScrollView scrollView = new ScrollView(this);
+        scrollView.setFillViewport(false);
+        screen.addView(scrollView, new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                0,
+                1
+        ));
+        return scrollView;
+    }
+
+    private LinearLayout pageRoot(ScrollView scrollView) {
+        LinearLayout root = new LinearLayout(this);
+        root.setOrientation(LinearLayout.VERTICAL);
+        root.setPadding(dp(18), dp(22), dp(18), dp(18));
+        root.setBackgroundColor(appColor(R.color.screen_background));
+        scrollView.addView(root);
+        return root;
+    }
+
+    private void addPageHeader(LinearLayout root, String titleText, String subtitleText) {
+        TextView title = new TextView(this);
+        title.setText(titleText);
+        title.setTextColor(appColor(R.color.text_primary));
+        title.setTextSize(28);
+        title.setTypeface(Typeface.DEFAULT_BOLD);
+        root.addView(title);
+
+        TextView subtitle = new TextView(this);
+        subtitle.setText(subtitleText);
+        subtitle.setTextColor(appColor(R.color.text_secondary));
+        subtitle.setTextSize(14);
+        subtitle.setPadding(0, dp(4), 0, dp(16));
+        root.addView(subtitle);
     }
 
     private LinearLayout section() {
@@ -660,17 +945,25 @@ public class MainActivity extends Activity {
         return drawable;
     }
 
-    private LinearLayout summaryCard(String label, String fallback, TextView valueView) {
+    private LinearLayout summaryCard(int iconRes, String label, String fallback, TextView valueView) {
         LinearLayout card = new LinearLayout(this);
         card.setOrientation(LinearLayout.VERTICAL);
         card.setPadding(dp(14), dp(12), dp(14), dp(12));
         card.setBackground(cardBackground(appColor(R.color.card_background), dp(8), appColor(R.color.border)));
 
+        LinearLayout labelRow = new LinearLayout(this);
+        labelRow.setGravity(Gravity.CENTER_VERTICAL);
+        card.addView(labelRow);
+
+        labelRow.addView(iconView(iconRes, appColor(R.color.brand_green), dp(17)), new LinearLayout.LayoutParams(dp(17), dp(17)));
+
         TextView labelView = new TextView(this);
         labelView.setText(label);
         labelView.setTextColor(appColor(R.color.text_secondary));
         labelView.setTextSize(11);
-        card.addView(labelView);
+        LinearLayout.LayoutParams labelParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        labelParams.setMargins(dp(6), 0, 0, 0);
+        labelRow.addView(labelView, labelParams);
 
         valueView.setText(fallback);
         valueView.setTextColor(appColor(R.color.text_primary));
@@ -682,19 +975,27 @@ public class MainActivity extends Activity {
         return card;
     }
 
-    private LinearLayout inputBlock(String label, EditText input) {
+    private LinearLayout inputBlock(int iconRes, String label, EditText input) {
         LinearLayout block = new LinearLayout(this);
         block.setOrientation(LinearLayout.VERTICAL);
 
+        LinearLayout labelRow = new LinearLayout(this);
+        labelRow.setGravity(Gravity.CENTER_VERTICAL);
+        block.addView(labelRow);
+
+        labelRow.addView(iconView(iconRes, appColor(R.color.brand_green), dp(15)), new LinearLayout.LayoutParams(dp(15), dp(15)));
+
         TextView labelView = smallLabel(label);
-        block.addView(labelView);
+        LinearLayout.LayoutParams labelParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        labelParams.setMargins(dp(6), 0, 0, 0);
+        labelRow.addView(labelView, labelParams);
         block.addView(input, fieldParams());
 
         return block;
     }
 
-    private LinearLayout spacedField(String label, EditText input) {
-        LinearLayout block = inputBlock(label, input);
+    private LinearLayout spacedField(int iconRes, String label, EditText input) {
+        LinearLayout block = inputBlock(iconRes, label, input);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -723,19 +1024,93 @@ public class MainActivity extends Activity {
         return title;
     }
 
-    private View settingsRow(String iconText, String titleText, String descriptionText, boolean hasSwitch) {
+    private TextView emptyText(String text) {
+        TextView empty = new TextView(this);
+        empty.setText(text);
+        empty.setTextColor(appColor(R.color.text_secondary));
+        empty.setTextSize(15);
+        return empty;
+    }
+
+    private Button primaryButton(String text, int iconRes) {
+        Button button = new Button(this);
+        button.setText(text);
+        button.setTextColor(color(android.R.color.white));
+        button.setTextSize(14);
+        button.setTypeface(Typeface.DEFAULT_BOLD);
+        button.setAllCaps(false);
+        button.setCompoundDrawablesWithIntrinsicBounds(iconRes, 0, 0, 0);
+        button.setCompoundDrawablePadding(dp(8));
+        button.setBackground(cardBackground(appColor(R.color.brand_green), dp(8), appColor(R.color.brand_green)));
+        return button;
+    }
+
+    private LinearLayout simpleListCard(int iconRes, String titleText, String descriptionText) {
+        LinearLayout card = new LinearLayout(this);
+        card.setOrientation(LinearLayout.HORIZONTAL);
+        card.setGravity(Gravity.CENTER_VERTICAL);
+        card.setPadding(dp(12), dp(12), dp(12), dp(12));
+        card.setBackground(cardBackground(appColor(R.color.card_background), dp(8), appColor(R.color.border)));
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.setMargins(0, 0, 0, dp(10));
+        card.setLayoutParams(params);
+
+        card.addView(iconBox(iconRes, dp(36), appColor(R.color.brand_green_soft), appColor(R.color.brand_green)),
+                new LinearLayout.LayoutParams(dp(36), dp(36)));
+
+        LinearLayout copy = new LinearLayout(this);
+        copy.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams copyParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+        copyParams.setMargins(dp(10), 0, 0, 0);
+        card.addView(copy, copyParams);
+
+        TextView title = new TextView(this);
+        title.setText(titleText);
+        title.setTextColor(appColor(R.color.text_primary));
+        title.setTextSize(13);
+        title.setTypeface(Typeface.DEFAULT_BOLD);
+        copy.addView(title);
+
+        TextView description = new TextView(this);
+        description.setText(descriptionText);
+        description.setTextColor(appColor(R.color.text_secondary));
+        description.setTextSize(11);
+        description.setPadding(0, dp(3), 0, 0);
+        copy.addView(description);
+
+        return card;
+    }
+
+    private LinearLayout iconBox(int iconRes, int size, int backgroundColor, int tintColor) {
+        LinearLayout box = new LinearLayout(this);
+        box.setGravity(Gravity.CENTER);
+        box.setBackground(cardBackground(backgroundColor, dp(8), backgroundColor));
+        box.addView(iconView(iconRes, tintColor, Math.max(dp(18), size - dp(16))),
+                new LinearLayout.LayoutParams(Math.max(dp(18), size - dp(16)), Math.max(dp(18), size - dp(16))));
+        return box;
+    }
+
+    private ImageView iconView(int iconRes, int tintColor, int size) {
+        ImageView icon = new ImageView(this);
+        icon.setImageResource(iconRes);
+        icon.setColorFilter(tintColor);
+        icon.setAdjustViewBounds(true);
+        icon.setMaxWidth(size);
+        icon.setMaxHeight(size);
+        return icon;
+    }
+
+    private View settingsRow(int iconRes, String titleText, String descriptionText, boolean hasSwitch) {
         LinearLayout row = new LinearLayout(this);
         row.setOrientation(LinearLayout.HORIZONTAL);
         row.setGravity(Gravity.CENTER_VERTICAL);
         row.setPadding(0, dp(12), 0, 0);
 
-        TextView icon = new TextView(this);
-        icon.setText(iconText);
-        icon.setTextColor(appColor(R.color.brand_green));
-        icon.setTextSize(15);
-        icon.setGravity(Gravity.CENTER);
-        icon.setBackground(cardBackground(appColor(R.color.brand_green_soft), dp(8), appColor(R.color.brand_green_soft)));
-        row.addView(icon, new LinearLayout.LayoutParams(dp(38), dp(38)));
+        LinearLayout iconBox = iconBox(iconRes, dp(38), appColor(R.color.brand_green_soft), appColor(R.color.brand_green));
+        row.addView(iconBox, new LinearLayout.LayoutParams(dp(38), dp(38)));
 
         LinearLayout copy = new LinearLayout(this);
         copy.setOrientation(LinearLayout.VERTICAL);
@@ -787,39 +1162,42 @@ public class MainActivity extends Activity {
         nav.setPadding(dp(16), dp(10), dp(16), dp(14));
         nav.setBackgroundColor(appColor(R.color.screen_background));
 
-        nav.addView(navItem("Registro", currentPage == PAGE_REGISTER, PAGE_REGISTER), weightedNavParams(0));
-        nav.addView(navItem("Historico", false, -1), weightedNavParams(dp(6)));
-        nav.addView(navItem("Veiculos", false, -1), weightedNavParams(dp(6)));
-        nav.addView(navItem("Postos", false, -1), weightedNavParams(dp(6)));
-        nav.addView(navItem("Config", currentPage == PAGE_SETTINGS, PAGE_SETTINGS), weightedNavParams(dp(6)));
+        nav.addView(navItem(R.drawable.ic_fuel, "Registro", currentPage == PAGE_REGISTER, PAGE_REGISTER), weightedNavParams(0));
+        nav.addView(navItem(R.drawable.ic_clock, "Historico", currentPage == PAGE_HISTORY, PAGE_HISTORY), weightedNavParams(dp(6)));
+        nav.addView(navItem(R.drawable.ic_car, "Veiculos", currentPage == PAGE_VEHICLES, PAGE_VEHICLES), weightedNavParams(dp(6)));
+        nav.addView(navItem(R.drawable.ic_location, "Postos", currentPage == PAGE_STATIONS, PAGE_STATIONS), weightedNavParams(dp(6)));
+        nav.addView(navItem(R.drawable.ic_settings, "Config", currentPage == PAGE_SETTINGS, PAGE_SETTINGS), weightedNavParams(dp(6)));
 
         return nav;
     }
 
-    private TextView navItem(String text, boolean selected, int page) {
-        TextView item = new TextView(this);
-        item.setText(text);
+    private LinearLayout navItem(int iconRes, String text, boolean selected, int page) {
+        LinearLayout item = new LinearLayout(this);
+        item.setOrientation(LinearLayout.VERTICAL);
         item.setGravity(Gravity.CENTER);
-        item.setTextSize(11);
-        item.setTypeface(Typeface.DEFAULT_BOLD);
-        item.setTextColor(appColor(selected ? R.color.brand_green : R.color.text_secondary));
         item.setBackground(cardBackground(
                 appColor(selected ? R.color.brand_green_soft : R.color.screen_background),
                 dp(24),
                 appColor(selected ? R.color.brand_green_soft : R.color.screen_background)
         ));
+
+        int tint = appColor(selected ? R.color.brand_green : R.color.text_secondary);
+        item.addView(iconView(iconRes, tint, dp(20)), new LinearLayout.LayoutParams(dp(20), dp(20)));
+
+        TextView label = new TextView(this);
+        label.setText(text);
+        label.setGravity(Gravity.CENTER);
+        label.setTextSize(10);
+        label.setTypeface(Typeface.DEFAULT_BOLD);
+        label.setTextColor(tint);
+        LinearLayout.LayoutParams labelParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        labelParams.setMargins(0, dp(2), 0, 0);
+        item.addView(label, labelParams);
+
         item.setOnClickListener(v -> {
-            if (page == PAGE_REGISTER || page == PAGE_SETTINGS) {
-                currentPage = page;
-                setContentView(buildContent());
-                if (currentPage == PAGE_REGISTER) {
-                    refreshVehicles();
-                    refreshHistory();
-                    requestLocationIfPossible();
-                }
-            } else {
-                toast(text + " em breve.");
-            }
+            currentPage = page;
+            setContentView(buildContent());
+            refreshCurrentPage();
         });
         return item;
     }
