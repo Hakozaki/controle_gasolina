@@ -74,6 +74,8 @@ public class MainActivity extends Activity {
     private LinearLayout stationsContainer;
     private Location lastLocation;
     private int currentPage = PAGE_REGISTER;
+    private int editingVehicleIndex = -1;
+    private int editingStationIndex = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -314,8 +316,8 @@ public class MainActivity extends Activity {
         vehiclePlateInput = input("ABC-1D23", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
         form.addView(spacedField(R.drawable.ic_tag, "Placa", vehiclePlateInput));
 
-        Button saveVehicle = primaryButton("Cadastrar veiculo", R.drawable.ic_plus);
-        saveVehicle.setOnClickListener(v -> addVehicleFromPage());
+        Button saveVehicle = primaryButton("Salvar veiculo", 0);
+        saveVehicle.setOnClickListener(v -> saveVehicleFromPage());
         LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(52));
         buttonParams.setMargins(0, dp(10), 0, 0);
         form.addView(saveVehicle, buttonParams);
@@ -353,8 +355,8 @@ public class MainActivity extends Activity {
         stationNeighborhoodInput = input("Centro", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
         form.addView(spacedField(R.drawable.ic_location, "Bairro", stationNeighborhoodInput));
 
-        Button saveStation = primaryButton("Cadastrar posto", R.drawable.ic_plus);
-        saveStation.setOnClickListener(v -> addStationFromPage());
+        Button saveStation = primaryButton("Salvar posto", 0);
+        saveStation.setOnClickListener(v -> saveStationFromPage());
         LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(52));
         buttonParams.setMargins(0, dp(10), 0, 0);
         form.addView(saveStation, buttonParams);
@@ -485,17 +487,42 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void addVehicleFromPage() {
+    private void saveVehicleFromPage() {
         String name = vehicleNameInput == null ? "" : vehicleNameInput.getText().toString().trim();
         String plate = vehiclePlateInput == null ? "" : vehiclePlateInput.getText().toString().trim();
         String label = plate.isEmpty() ? name : name + " - " + plate;
-        addVehicle(label);
-        if (vehicleNameInput != null) vehicleNameInput.setText("");
-        if (vehiclePlateInput != null) vehiclePlateInput.setText("");
-        refreshVehicleList();
+        if (label.trim().isEmpty()) {
+            toast("Informe um nome para o veiculo.");
+            return;
+        }
+
+        try {
+            JSONArray vehicles = getArray(KEY_VEHICLES);
+            for (int i = 0; i < vehicles.length(); i++) {
+                if (i != editingVehicleIndex && label.equalsIgnoreCase(vehicles.getString(i))) {
+                    toast("Esse veiculo ja esta cadastrado.");
+                    return;
+                }
+            }
+
+            if (editingVehicleIndex >= 0 && editingVehicleIndex < vehicles.length()) {
+                vehicles.put(editingVehicleIndex, label);
+            } else {
+                vehicles.put(label);
+            }
+            putArray(KEY_VEHICLES, vehicles);
+
+            editingVehicleIndex = -1;
+            if (vehicleNameInput != null) vehicleNameInput.setText("");
+            if (vehiclePlateInput != null) vehiclePlateInput.setText("");
+            refreshVehicleList();
+            toast("Veiculo salvo.");
+        } catch (JSONException e) {
+            toast("Nao foi possivel salvar o veiculo.");
+        }
     }
 
-    private void addStationFromPage() {
+    private void saveStationFromPage() {
         String name = stationNameInput == null ? "" : stationNameInput.getText().toString().trim();
         String neighborhood = stationNeighborhoodInput == null ? "" : stationNeighborhoodInput.getText().toString().trim();
         if (name.isEmpty()) {
@@ -507,7 +534,7 @@ public class MainActivity extends Activity {
             JSONArray stations = getArray(KEY_STATIONS);
             for (int i = 0; i < stations.length(); i++) {
                 JSONObject station = stations.getJSONObject(i);
-                if (name.equalsIgnoreCase(station.getString("name"))) {
+                if (i != editingStationIndex && name.equalsIgnoreCase(station.getString("name"))) {
                     toast("Esse posto ja esta cadastrado.");
                     return;
                 }
@@ -516,15 +543,20 @@ public class MainActivity extends Activity {
             JSONObject station = new JSONObject();
             station.put("name", name);
             station.put("neighborhood", neighborhood);
-            stations.put(station);
+            if (editingStationIndex >= 0 && editingStationIndex < stations.length()) {
+                stations.put(editingStationIndex, station);
+            } else {
+                stations.put(station);
+            }
             putArray(KEY_STATIONS, stations);
 
+            editingStationIndex = -1;
             stationNameInput.setText("");
             stationNeighborhoodInput.setText("");
             refreshStationList();
-            toast("Posto cadastrado.");
+            toast("Posto salvo.");
         } catch (JSONException e) {
-            toast("Nao foi possivel cadastrar o posto.");
+            toast("Nao foi possivel salvar o posto.");
         }
     }
 
@@ -633,10 +665,41 @@ public class MainActivity extends Activity {
             }
             for (int i = 0; i < vehicles.length(); i++) {
                 String label = vehicles.getString(i);
-                vehiclesContainer.addView(simpleListCard(R.drawable.ic_car, label, "Pronto para registrar abastecimentos."));
+                LinearLayout card = simpleListCard(
+                        R.drawable.ic_car,
+                        label,
+                        i == editingVehicleIndex ? "Editando este veiculo." : "Toque para editar."
+                );
+                final int index = i;
+                card.setOnClickListener(v -> selectVehicleForEdit(index));
+                vehiclesContainer.addView(card);
             }
         } catch (JSONException e) {
             toast("Erro ao carregar veiculos.");
+        }
+    }
+
+    private void selectVehicleForEdit(int index) {
+        try {
+            JSONArray vehicles = getArray(KEY_VEHICLES);
+            if (index < 0 || index >= vehicles.length()) {
+                return;
+            }
+
+            String label = vehicles.getString(index);
+            int separator = label.lastIndexOf(" - ");
+            if (separator >= 0) {
+                vehicleNameInput.setText(label.substring(0, separator));
+                vehiclePlateInput.setText(label.substring(separator + 3));
+            } else {
+                vehicleNameInput.setText(label);
+                vehiclePlateInput.setText("");
+            }
+            editingVehicleIndex = index;
+            refreshVehicleList();
+            toast("Dados do veiculo carregados.");
+        } catch (JSONException e) {
+            toast("Nao foi possivel carregar o veiculo.");
         }
     }
 
@@ -655,10 +718,34 @@ public class MainActivity extends Activity {
                 JSONObject station = stations.getJSONObject(i);
                 String neighborhood = station.optString("neighborhood", "");
                 String subtitle = neighborhood.isEmpty() ? "Bairro nao informado." : neighborhood;
-                stationsContainer.addView(simpleListCard(R.drawable.ic_fuel, station.getString("name"), subtitle));
+                if (i == editingStationIndex) {
+                    subtitle = "Editando este posto.";
+                }
+                LinearLayout card = simpleListCard(R.drawable.ic_fuel, station.getString("name"), subtitle);
+                final int index = i;
+                card.setOnClickListener(v -> selectStationForEdit(index));
+                stationsContainer.addView(card);
             }
         } catch (JSONException e) {
             toast("Erro ao carregar postos.");
+        }
+    }
+
+    private void selectStationForEdit(int index) {
+        try {
+            JSONArray stations = getArray(KEY_STATIONS);
+            if (index < 0 || index >= stations.length()) {
+                return;
+            }
+
+            JSONObject station = stations.getJSONObject(index);
+            stationNameInput.setText(station.optString("name", ""));
+            stationNeighborhoodInput.setText(station.optString("neighborhood", ""));
+            editingStationIndex = index;
+            refreshStationList();
+            toast("Dados do posto carregados.");
+        } catch (JSONException e) {
+            toast("Nao foi possivel carregar o posto.");
         }
     }
 
@@ -1039,8 +1126,10 @@ public class MainActivity extends Activity {
         button.setTextSize(14);
         button.setTypeface(Typeface.DEFAULT_BOLD);
         button.setAllCaps(false);
-        button.setCompoundDrawablesWithIntrinsicBounds(iconRes, 0, 0, 0);
-        button.setCompoundDrawablePadding(dp(8));
+        if (iconRes != 0) {
+            button.setCompoundDrawablesWithIntrinsicBounds(iconRes, 0, 0, 0);
+            button.setCompoundDrawablePadding(dp(8));
+        }
         button.setBackground(cardBackground(appColor(R.color.brand_green), dp(8), appColor(R.color.brand_green)));
         return button;
     }
