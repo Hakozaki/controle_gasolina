@@ -13,10 +13,13 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -58,7 +61,7 @@ public class MainActivity extends Activity {
     private Spinner vehicleSpinner;
     private Spinner fuelTypeSpinner;
     private EditText kmInput;
-    private EditText stationInput;
+    private AutoCompleteTextView stationInput;
     private EditText litersInput;
     private EditText totalValueInput;
     private TextView locationText;
@@ -191,12 +194,13 @@ public class MainActivity extends Activity {
         valueRow.addView(inputBlock(R.drawable.ic_liters, "Litros", litersInput), weightedCardParams(0));
 
         totalValueInput = input("Valor pago", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        applyCurrencyMask(totalValueInput);
         valueRow.addView(inputBlock(R.drawable.ic_money, "Valor total", totalValueInput), weightedCardParams(dp(8)));
 
         kmInput = input("Quilometragem atual (opcional)", InputType.TYPE_CLASS_NUMBER);
         form.addView(spacedField(R.drawable.ic_gauge, "Quilometragem", kmInput));
 
-        stationInput = input("Posto de combustivel", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+        stationInput = autoCompleteInput("Selecione o posto", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
         form.addView(spacedField(R.drawable.ic_location, "Posto", stationInput));
 
         locationText = new TextView(this);
@@ -624,6 +628,7 @@ public class MainActivity extends Activity {
     private void refreshCurrentPage() {
         if (currentPage == PAGE_REGISTER) {
             refreshVehicles();
+            refreshStationOptions();
             refreshHistory();
             requestLocationIfPossible();
         } else if (currentPage == PAGE_HISTORY) {
@@ -649,6 +654,26 @@ public class MainActivity extends Activity {
             vehicleSpinner.setAdapter(adapter);
         } catch (JSONException e) {
             toast("Erro ao carregar veiculos.");
+        }
+    }
+
+    private void refreshStationOptions() {
+        if (stationInput == null) {
+            return;
+        }
+        try {
+            JSONArray stations = getArray(KEY_STATIONS);
+            List<String> names = new ArrayList<>();
+            for (int i = 0; i < stations.length(); i++) {
+                String name = stations.getJSONObject(i).optString("name", "");
+                if (!name.isEmpty()) {
+                    names.add(name);
+                }
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, names);
+            stationInput.setAdapter(adapter);
+        } catch (JSONException e) {
+            toast("Erro ao carregar postos.");
         }
     }
 
@@ -1052,6 +1077,59 @@ public class MainActivity extends Activity {
         return input;
     }
 
+    private AutoCompleteTextView autoCompleteInput(String hint, int inputType) {
+        AutoCompleteTextView input = new AutoCompleteTextView(this);
+        input.setHint(hint);
+        input.setSingleLine(true);
+        input.setTextColor(appColor(R.color.text_primary));
+        input.setHintTextColor(appColor(R.color.text_secondary));
+        input.setInputType(inputType);
+        input.setTextSize(13);
+        input.setThreshold(0);
+        input.setBackground(cardBackground(appColor(R.color.field_background), dp(8), appColor(R.color.border)));
+        input.setPadding(dp(12), 0, dp(12), 0);
+        input.setLayoutParams(fieldParams());
+        input.setOnClickListener(v -> input.showDropDown());
+        input.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                input.showDropDown();
+            }
+        });
+        return input;
+    }
+
+    private void applyCurrencyMask(EditText input) {
+        input.addTextChangedListener(new TextWatcher() {
+            private boolean updating;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (updating) {
+                    return;
+                }
+
+                String digits = onlyDigits(editable.toString());
+                if (digits.isEmpty()) {
+                    return;
+                }
+
+                updating = true;
+                double value = Double.parseDouble(digits) / 100.0;
+                input.setText(moneyFormat.format(value));
+                input.setSelection(input.getText().length());
+                updating = false;
+            }
+        });
+    }
+
     private LinearLayout pageShell() {
         LinearLayout screen = new LinearLayout(this);
         screen.setOrientation(LinearLayout.VERTICAL);
@@ -1444,7 +1522,7 @@ public class MainActivity extends Activity {
             return 0;
         }
         try {
-            String normalized = text.replace("R$", "").replace(" ", "");
+            String normalized = onlyNumberSymbols(text);
             if (normalized.contains(",")) {
                 normalized = normalized.replace(".", "").replace(",", ".");
             }
@@ -1452,6 +1530,28 @@ public class MainActivity extends Activity {
         } catch (NumberFormatException e) {
             return 0;
         }
+    }
+
+    private String onlyDigits(String text) {
+        StringBuilder digits = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char character = text.charAt(i);
+            if (Character.isDigit(character)) {
+                digits.append(character);
+            }
+        }
+        return digits.toString();
+    }
+
+    private String onlyNumberSymbols(String text) {
+        StringBuilder number = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char character = text.charAt(i);
+            if (Character.isDigit(character) || character == ',' || character == '.') {
+                number.append(character);
+            }
+        }
+        return number.toString();
     }
 
     private int color(int id) {
